@@ -41,12 +41,29 @@ Coming son
 
 ## Authors
 
-👤 **Author1**
+👤 **Andres Castañeda**
 
-- GitHub: [@githubhandle](https://github.com/githubhandle)
+- GitHub: [@githubhandle](https://github.com/afcastaneda223)
 - Twitter: [@twitterhandle](https://twitter.com/twitterhandle)
 - LinkedIn: [LinkedIn](https://linkedin.com/in/linkedinhandle)
 
+👤 **Rodrigo Ibaceta Jimenez**
+
+- GitHub: [@githubhandle](https://github.com/RokoVarano)
+- Twitter: [@twitterhandle](https://twitter.com/twitterhandle)
+- LinkedIn: [LinkedIn](https://linkedin.com/in/linkedinhandle)
+
+👤 **Lucas FS**
+
+- GitHub: [@githubhandle](https://github.com/notlfish)
+- Twitter: [@twitterhandle](https://twitter.com/twitterhandle)
+- LinkedIn: [LinkedIn](https://linkedin.com/in/linkedinhandle)
+
+👤 **Opeyemi Oyelesi**
+
+- GitHub: [@githubhandle](https://github.com/AdedayoOpeyemi)
+- Twitter: [@twitterhandle](https://twitter.com/twitterhandle)
+- LinkedIn: [LinkedIn](https://linkedin.com/in/linkedinhandle)
 ## 🤝 Contributing
 
 Contributions, issues, and feature requests are welcome!
