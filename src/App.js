@@ -1,7 +1,14 @@
+import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import LoginForm from './components/LoginForm';
+
 function App() {
   return (
     <div className="App">
-      <h1 className="text-center">hello</h1>
+      <BrowserRouter>
+        <Routes>
+          <Route exact path="/" element={<LoginForm />} />
+        </Routes>
+      </BrowserRouter>
     </div>
   );
 }
