@@ -1,4 +1,5 @@
 import axios from 'axios';
+import MockAdapter from 'axios-mock-adapter';
 
 const LOGIN_SUCCESS = 'LOGIN_SUCCESS';
 const ALREADY_LOGGED = 'ALREADY_LOGGED';
@@ -8,15 +9,29 @@ const LOGIN_ERROR = 'LOGIN_ERROR';
 const port = '3000';
 const rootUrl = `http://localhost:${port}`;
 
-const loginUser = (username) => async (dispatch) => {
+const checkLogin = (dispatch) => {
   const user = localStorage.getItem('current_user');
 
   if (user) {
-    return {
-      type: ALREADY_LOGGED,
-      content: 'User already logged',
-    };
+    dispatch(
+      {
+        type: ALREADY_LOGGED,
+        content: 'User already logged',
+      },
+    );
+
+    return 'User already logged in';
   }
+
+  return 'No user Logged';
+};
+
+const loginUser = (username) => async (dispatch) => {
+  if (checkLogin(dispatch) === 'User already logged in') return 'User already logged in';
+
+  const mock = new MockAdapter(axios);
+
+  mock.onGet(`${rootUrl}/api/v1/users?name=${username}`).reply({ data: { code: '202', attributes: { user_id: '1', message: 'User Logged In' } } });
 
   const loginCall = axios.get(`${rootUrl}/api/v1/users?name=${username}`).then((response) => {
     const { data } = response;
@@ -99,4 +114,4 @@ const user = (state = [], action) => {
 };
 
 export default user;
-export { loginUser };
+export { checkLogin, loginUser };
