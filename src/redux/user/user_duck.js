@@ -15,7 +15,7 @@ const checkLogin = (dispatch) => {
     dispatch(
       {
         type: ALREADY_LOGGED,
-        content: 'User already logged',
+        message: 'User already logged',
       },
     );
 
