@@ -1,6 +1,6 @@
 import React, { useRef } from 'react';
 import { useDispatch } from 'react-redux';
-import { Link } from 'react-router-dom';
+import { Navigate } from 'react-router-dom';
 import { loginUser } from '../redux/user/user_duck';
 import videos from './assets/pool.mp4';
 
@@ -13,10 +13,15 @@ const LoginForm = () => {
     if (input === ('' || null || undefined)) return;
 
     dispatch(loginUser(input));
+
+    window.location.reload();
   };
+
+  const checkLogin = (localStorage.getItem('current_user')) ? <Navigate to="/services" /> : '';
 
   return (
     <header>
+      {checkLogin}
       <video autoPlay="autoplay" loop="loop" muted>
         <source src={videos} type="video/mp4" />
       </video>
@@ -26,13 +31,7 @@ const LoginForm = () => {
             <h1>Welcome to City Services</h1>
             <h5 className="fs-6 fw-normal">Please Log in or Sign in with your Username</h5>
             <input type="text" className="form-control my-3" id="userName" aria-describedby="emailHelp" placeholder="User Name" ref={inputTextField} />
-            <Link to={
-              localStorage.getItem('current_user') ? '/services' : window.location.pathname
-            }
-            >
-              <button className="btn green" type="button" onClick={() => toServices(inputTextField.current.value)}>Login/Sign in</button>
-            </Link>
-
+            <button className="btn green" type="button" onClick={() => toServices(inputTextField.current.value)}>Login/Sign in</button>
           </div>
         </div>
       </div>
