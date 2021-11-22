@@ -1,8 +1,6 @@
 import { useDispatch } from 'react-redux';
-import { Provider } from 'react-redux';
-import React from 'react';
+import React, { useEffect } from 'react';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
-import { useEffect } from 'react';
 import LoginForm from './components/LoginForm';
 import { checkLogin } from './redux/user/user_duck';
 
