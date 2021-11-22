@@ -1,4 +1,5 @@
 import { Provider } from 'react-redux';
+import React from 'react';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import LoginForm from './components/LoginForm';
 import store from './redux/configurateStore';
