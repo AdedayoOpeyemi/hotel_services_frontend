@@ -4,9 +4,19 @@ import videos from './assets/pool.mp4';
 const LoginForm = () => {
   const inputTextField = React.createRef();
 
-  const printInput = (name) => {
-    console.log(name);
+  const user = useSelector((state) => state.user);
+
+  const dispatch = useDispatch();
+
+  const dispatchLogin = (userInput) => {
+    dispatch(loginUser(userInput));
+
+    console.log(user);
+
+    localStorage.setItem('current_user', user.content);
   };
+
+  const loginToServices = (userInput) => <button className="btn btn-primary" type="submit" onClick={() => dispatchLogin(userInput)}>Button</button>;
 
   return (
     <header>
