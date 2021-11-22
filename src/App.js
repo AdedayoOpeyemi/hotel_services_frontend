@@ -4,14 +4,14 @@ import React from 'react';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import { useEffect } from 'react';
 import LoginForm from './components/LoginForm';
-import { checkLogin, loginUser } from './redux/user/user_duck';
+import { checkLogin } from './redux/user/user_duck';
 
 function App() {
   const dispatch = useDispatch();
 
   useEffect(() => {
     dispatch(checkLogin);
-    dispatch(loginUser);
+    // dispatch(loginUser);
   });
 
   return (
