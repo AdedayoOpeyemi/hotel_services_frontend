@@ -8,9 +8,15 @@ const LoginForm = () => {
   };
 
   return (
-    <div className="mb-3">
-      <input type="text" className="form-control" id="userName" aria-describedby="emailHelp" placeholder="User Name" ref={inputTextField} />
-      <button className="btn btn-primary" type="submit" onClick={() => printInput(inputTextField.current.value)}>Button</button>
+    <div className="container">
+      <div className="row vh-100 justify-content-center align-items-center">
+        <div className="col text-center">
+          <h1>Welcome to City Services</h1>
+          <h5 className="fs-6 fw-normal">Please Log in or Sign in with your Username</h5>
+          <input type="text" className="form-control my-3" id="userName" aria-describedby="emailHelp" placeholder="User Name" ref={inputTextField} />
+          <button className="btn green" type="submit" onClick={() => printInput(inputTextField.current.value)}>Login/Sign in</button>
+        </div>
+      </div>
     </div>
   );
 };
