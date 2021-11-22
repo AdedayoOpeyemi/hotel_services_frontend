@@ -1,5 +1,4 @@
 import axios from 'axios';
-import MockAdapter from 'axios-mock-adapter';
 
 const LOGIN_SUCCESS = 'LOGIN_SUCCESS';
 const ALREADY_LOGGED = 'ALREADY_LOGGED';
@@ -29,68 +28,61 @@ const checkLogin = (dispatch) => {
 const loginUser = (username) => async (dispatch) => {
   if (checkLogin(dispatch) === 'User already logged in') return 'User already logged in';
 
-  const mock = new MockAdapter(axios);
+  axios.get(`${rootUrl}/api/v1/users`, { params: { name: username } })
+    .then((response) => {
+      const { data } = response;
 
-  mock.onGet(`${rootUrl}/api/v1/users?name=${username}`).reply({ data: { code: '202', attributes: { user_id: '1', message: 'User Logged In' } } });
+      console.log(data);
 
-  const loginCall = axios.get(`${rootUrl}/api/v1/users?name=${username}`).then((response) => {
-    const { data } = response;
+      if (true) { // TODO: change to data.data.code === '202' when non hard-coded data is used
+        dispatch(
+          {
+            type: LOGIN_SUCCESS,
+            content: data.user_id,
+            message: data.message,
+          },
+        );
 
-    if (data.data.code === '202') {
-      dispatch(
-        {
-          type: LOGIN_SUCCESS,
-          content: data.data.attributes.user_id,
-          message: data.data.attributes.message,
-        },
-      );
+        return 'Login Succesful';
+      }
 
-      return 'Login Succesful';
-    }
+      return 'Login Failed';
+    }).catch((error) => {
+      console.log(error.message);
 
-    return 'Login Failed. NonExistant User?';
-  });
+      axios.post(`${rootUrl}/api/v1/users/`).then((response) => {
+        const { data } = response;
 
-  if (loginCall === 'Login Succesful') return 'Login Succesful';
+        if (data.data.code === '201') {
+          dispatch(
+            {
+              type: SIGNUP_SUCCESS,
+              content: data.data.attributes.user_id,
+              message: data.data.attributes.message,
+            },
+          );
 
-  const signInCall = axios.post(`${rootUrl}/api/v1/users/`).then((response) => {
-    const { data } = response;
+          return 'Signup Succesful';
+        }
 
-    if (data.data.code === '201') {
-      dispatch(
-        {
-          type: SIGNUP_SUCCESS,
-          content: data.data.attributes.user_id,
-          message: data.data.attributes.message,
-        },
-      );
+        return 'Signup Failed';
+      }).catch((error) => {
+        console.log(error.message);
 
-      return 'Signup Succesful';
-    }
-
-    return 'Signup Failed';
-  });
-
-  if (signInCall === 'Signup Succesful') return 'Signup Succesful';
-
-  dispatch({
-    type: LOGIN_ERROR,
-    message: 'Login was not succesful',
-  });
+        dispatch({
+          type: LOGIN_ERROR,
+          message: 'Login was not succesful',
+        });
+      });
+    });
 
   return 'Login was not succesful';
 };
 
-// 1. Checkear si hay un usuario logueado. Si esta logueado redirigir a servicios
-// 2. Si no esta logueado, preguntar en la base de datos
-// 2.5 si falla la llamada, poner el mensaje de que fallo
-// 3. Si la respuesta es que existe, usar ese usuario
-// 4. Si la respuesta es que no existe, crear un nuevo usuario (con post)
-// 5. redirigir a servicios
-
 const user = (state = [], action) => {
   switch (action.type) {
     case LOGIN_SUCCESS:
+      console.log(LOGIN_SUCCESS, action.content);
       return {
         content: action.content,
         message: action.message,
@@ -101,14 +93,14 @@ const user = (state = [], action) => {
         message: action.message,
       };
     case ALREADY_LOGGED:
-      return {
-        message: action.message,
-      };
+      console.log(ALREADY_LOGGED);
+      return state;
     case LOGIN_ERROR:
       return {
         message: action.message,
       };
     default:
+      console.log('DEFAULT');
       return state;
   }
 };
