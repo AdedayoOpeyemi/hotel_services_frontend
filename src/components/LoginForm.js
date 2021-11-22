@@ -1,22 +1,15 @@
+import React, { useRef } from 'react';
+import { useDispatch } from 'react-redux';
+import { loginUser } from '../redux/user/user_duck';
 import React from 'react';
 import videos from './assets/pool.mp4';
 
 const LoginForm = () => {
-  const inputTextField = React.createRef();
-
-  const user = useSelector((state) => state.user);
-
   const dispatch = useDispatch();
 
-  const dispatchLogin = (userInput) => {
-    dispatch(loginUser(userInput));
+  const inputTextField = useRef('');
 
-    console.log(user);
-
-    localStorage.setItem('current_user', user.content);
-  };
-
-  const loginToServices = (userInput) => <button className="btn btn-primary" type="submit" onClick={() => dispatchLogin(userInput)}>Button</button>;
+  const loginToServices = (userInput) => <button className="btn btn-primary" type="submit" onClick={() => dispatch(loginUser(userInput))}>Button</button>;
 
   return (
     <header>

@@ -83,6 +83,7 @@ const user = (state = [], action) => {
   switch (action.type) {
     case LOGIN_SUCCESS:
       console.log(LOGIN_SUCCESS, action.content);
+      localStorage.setItem('current_user', action.content);
       return {
         content: action.content,
         message: action.message,
