@@ -35,5 +35,11 @@ header video {
 
 header .container {
   position: relative;
-  z-index: 2;
+  z-index: 1;
+}
+
+.sidebar{
+position: absolute;
+z-index: 999;
+background-color: white;
 }
