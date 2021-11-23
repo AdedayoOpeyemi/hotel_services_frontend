@@ -8,6 +8,7 @@ import { checkLogin } from './redux/user/user_duck';
 import Reservations from './components/Reservations';
 import NewService from './components/NewService';
 import Delete from './components/Delete';
+import Service from './components/Service';
 import { defaultService } from './redux/service/service_duck';
 
 function App() {
@@ -25,6 +26,7 @@ function App() {
         <Routes>
           <Route exact path="/" element={<LoginForm />} />
           <Route path="/services" element={<Services />} />
+          <Route path="/service" element={<Service />} />
           <Route path="/reserve" element={<Reserve />} />
           <Route path="/reservations" element={<Reservations />} />
           <Route path="/newservice" element={<NewService />} />
