@@ -8,6 +8,13 @@
   background-color: #97c036 !important;
 }
 
+.textg {
+  color: #97c036!important;
+}
+.btng {
+  background-color: #98BF0D!important;
+}
+
 header {
   position: relative;
   background-color: black;
