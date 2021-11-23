@@ -1,7 +1,6 @@
 import React, { useRef } from 'react';
 import { useDispatch } from 'react-redux';
 import { postService } from '../redux/service/service_duck';
-import React from 'react';
 import videos from './assets/office.mp4';
 
 function NewService() {
