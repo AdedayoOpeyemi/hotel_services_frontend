@@ -9,8 +9,8 @@ function NewService() {
             <h1 className="text-center">Book a new Service</h1>
             <p className="my-5">
               Lorem ipsum dolor sit amet consectetur adipisicing elit. Corporis nobis harum unde
-              consectetur velit rerum iure mollitia quia itaque ipsa error quo architecto assumenda, a
-              spernatur vel iste eos, illum quisquam!
+              consectetur velit rerum iure mollitia quia itaque ipsa error quo
+              architecto assumenda, a spernatur vel iste eos, illum quisquam!
             </p>
             <div className="row">
               <div className="col">
