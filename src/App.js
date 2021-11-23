@@ -9,12 +9,15 @@ import Reservations from './components/Reservations';
 import NewService from './components/NewService';
 import Delete from './components/Delete';
 import Service from './components/Service';
+import { defaultService } from './redux/service/service_duck';
+
 
 function App() {
   const dispatch = useDispatch();
 
   useEffect(() => {
     dispatch(checkLogin);
+    dispatch(defaultService);
     // dispatch(loginUser);
   });
 
