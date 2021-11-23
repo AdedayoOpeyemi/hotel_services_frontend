@@ -2,6 +2,7 @@ import axios from 'axios';
 
 const POST_SERVICE = 'POST_SERVICE';
 const MISSING_FIELDS = 'MISSING_FIELDS';
+const GET_SERVICES = 'GET_SERVICES';
 
 const port = '3000';
 const rootUrl = `http://localhost:${port}`;
@@ -9,6 +10,20 @@ const rootUrl = `http://localhost:${port}`;
 const defaultService = () => ({
   message: 'no Service yet',
 });
+
+const getServices = () => async (dispatch) => {
+  axios.get(`${rootUrl}/api/v1/services`)
+    .catch((error) => {
+      console.log(error.message);
+    }).then((response) => {
+      console.log(response);
+
+      dispatch({
+        type: GET_SERVICES,
+        payload: response.data.services,
+      });
+    });
+};
 
 const postService = (
   serviceName,
@@ -38,11 +53,12 @@ const postService = (
     },
   }).catch((error) => {
     console.log('ERROR:', error.message);
+    return error;
   })
     .then((response) => {
       dispatch({
         type: POST_SERVICE,
-        message: response.data.message,
+        message: response.message,
       });
     });
 
@@ -51,6 +67,10 @@ const postService = (
 
 const services = (state = [], action) => {
   switch (action.type) {
+    case GET_SERVICES:
+      console.log(action);
+      console.log('ACTION:', GET_SERVICES);
+      return action.payload;
     case POST_SERVICE:
       return state;
     case MISSING_FIELDS:
@@ -61,4 +81,4 @@ const services = (state = [], action) => {
 };
 
 export default services;
-export { postService, defaultService };
+export { postService, defaultService, getServices };
