@@ -81,6 +81,18 @@ function NewService() {
                 </div>
               </div>
               <div className="col">
+                <div className="input-group mb-3 ">
+                  <select className="form-select rounded-pill btng text-white" id="city">
+                    <option value="London">London</option>
+                    <option value="Melbourne">Melbourne</option>
+                    <option value="Zurich">Zurich</option>
+                    <option value="Tokyo">Tokyo</option>
+                    <option value="Auckland">Auckland</option>
+                    <option value="New York">2026</option>
+                  </select>
+                </div>
+              </div>
+              <div className="col">
                 <button type="button" className="btn btn-light w-100 textg fw-bolder rounded-pill">Create</button>
               </div>
             </div>
