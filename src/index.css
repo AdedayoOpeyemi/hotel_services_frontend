@@ -4,6 +4,10 @@
   background-color: red;
 }
 
+.imgcont {
+  max-height: 300px;
+}
+
 .green {
   background-color: #97c036 !important;
 }
