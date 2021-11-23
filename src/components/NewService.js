@@ -1,3 +1,6 @@
+import React, { useRef } from 'react';
+import { useDispatch } from 'react-redux';
+import { postService } from '../redux/service/service_duck';
 import React from 'react';
 import videos from './assets/office.mp4';
 
@@ -7,13 +10,23 @@ function NewService() {
   const servicePrice = useRef('');
   const serviceImage = useRef('');
 
-  const printServiceFields = () => {
-    console.log(
+  // const printServiceFields = () => {
+  //   console.log(
+  //     serviceName.current.value,
+  //     serviceDescription.current.value,
+  //     servicePrice.current.value,
+  //     serviceImage.current.value,
+  //   );
+  // };
+
+  const dispatch = useDispatch();
+  const dispatchService = () => {
+    dispatch(postService(
       serviceName.current.value,
       serviceDescription.current.value,
       servicePrice.current.value,
       serviceImage.current.value,
-    );
+    ));
   };
 
   return (
@@ -51,7 +64,7 @@ function NewService() {
             </div>
             <div className="row">
               <div className="col">
-                <button type="button" className="btn btn-light w-100 textg fw-bolder rounded-pill mb-3" onClick={printServiceFields}>Create</button>
+                <button type="button" className="btn btn-light w-100 textg fw-bolder rounded-pill mb-3" onClick={dispatchService}>Create</button>
               </div>
             </div>
           </div>

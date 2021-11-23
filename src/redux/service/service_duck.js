@@ -1,19 +1,40 @@
 import axios from 'axios';
 
 const POST_SERVICE = 'POST_SERVICE';
+const MISSING_FIELDS = 'MISSING_FIELDS';
 
 const port = '3000';
 const rootUrl = `http://localhost:${port}`;
 
-const postService = () => async (dispatch) => {
+const defaultService = () => ({
+  message: 'no Service yet',
+});
+
+const postService = (
+  serviceName,
+  serviceDescription,
+  servicePrice,
+  serviceImage,
+) => async (dispatch) => {
+  if ((serviceName
+        || serviceDescription
+        || servicePrice
+        || serviceImage) === '') {
+    dispatch({
+      type: MISSING_FIELDS,
+      message: 'Missing fields',
+    });
+    return 'There are missing fields';
+  }
+
   axios({
     method: 'post',
     url: `${rootUrl}/api/v1/services`,
     data: {
-      name: 'pool time',
-      description: 'bring your own towel',
-      price: 1000,
-      image_url: 'https://picsum.photos/200/300',
+      name: serviceName,
+      description: serviceDescription,
+      price: servicePrice,
+      image_url: serviceImage,
     },
   }).catch((error) => {
     console.log('ERROR:', error.message);
@@ -21,7 +42,7 @@ const postService = () => async (dispatch) => {
     .then((response) => {
       dispatch({
         type: POST_SERVICE,
-        message: response.message,
+        message: response.data.message,
       });
     });
 
@@ -31,11 +52,13 @@ const postService = () => async (dispatch) => {
 const services = (state = [], action) => {
   switch (action.type) {
     case POST_SERVICE:
-      return action.message;
+      return state;
+    case MISSING_FIELDS:
+      return state;
     default:
       return state;
   }
 };
 
 export default services;
-export { postService };
+export { postService, defaultService };
