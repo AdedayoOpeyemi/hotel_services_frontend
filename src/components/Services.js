@@ -12,14 +12,14 @@ function Services() {
           <p className="fw-lighter text-center">
             Please select a Service
           </p>
-            <Carousel />
-            <row className="text-center fs-3"> 
-              <div className="col">
-              <i className="fab fa-facebook"></i>
-              <i className="fab fa-twitter px-3"></i>
-              <i className="fab fa-instagram"></i>
-              </div>
-            </row>
+          <Carousel />
+          <row className="text-center fs-3">
+            <div className="col">
+              <i className="fab fa-facebook" />
+              <i className="fab fa-twitter px-3" />
+              <i className="fab fa-instagram" />
+            </div>
+          </row>
         </row>
       </div>
 
