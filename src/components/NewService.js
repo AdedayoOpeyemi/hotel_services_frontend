@@ -1,9 +1,13 @@
 import React from 'react';
+import videos from './assets/office.mp4';
 
 function NewService() {
   return (
-    <div className="green">
-      <div className="container text-white">
+    <header>
+      <video autoPlay="autoplay" loop="loop" muted>
+        <source src={videos} type="video/mp4" />
+      </video>
+      <div className="container text-white px-5">
         <div className="row vh-100 justify-content-center align-items-center">
           <div className="row">
             <h1 className="text-center mb-5">Create a new Service</h1>
@@ -33,13 +37,13 @@ function NewService() {
             </div>
             <div className="row">
               <div className="col">
-                <button type="button" className="btn btn-light w-100 textg fw-bolder rounded-pill mb-3">Create</button>
+                <button type="button" className="btn text-white w-100 green fw-bolder rounded-pill mb-3">Create</button>
               </div>
             </div>
           </div>
         </div>
       </div>
-    </div>
+    </header>
   );
 }
 
