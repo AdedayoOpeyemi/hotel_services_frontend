@@ -11,7 +11,6 @@ import Delete from './components/Delete';
 import Service from './components/Service';
 import { defaultService } from './redux/service/service_duck';
 
-
 function App() {
   const dispatch = useDispatch();
 
