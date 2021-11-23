@@ -1,6 +1,20 @@
-import React from 'react';
+import React, { useRef } from 'react';
 
 function NewService() {
+  const serviceName = useRef('');
+  const serviceDescription = useRef('');
+  const servicePrice = useRef('');
+  const serviceImage = useRef('');
+
+  const printServiceFields = () => {
+    console.log(
+      serviceName.current.value,
+      serviceDescription.current.value,
+      servicePrice.current.value,
+      serviceImage.current.value,
+    );
+  };
+
   return (
     <div className="green">
       <div className="container text-white">
@@ -10,30 +24,30 @@ function NewService() {
             <div className="row">
               <div className="input-group mb-3">
                 <div className="input-group-prepend" />
-                <input type="text" className="form-control text-center rounded-pill mb-3" placeholder="Service name" aria-label="service_name" aria-describedby="basic-addon1" />
+                <input type="text" className="form-control text-center rounded-pill mb-3" placeholder="Service name" aria-label="service_name" aria-describedby="basic-addon1" ref={serviceName} />
               </div>
             </div>
             <div className="row">
               <div className="input-group mb-3">
                 <div className="input-group-prepend" />
-                <input type="text" className="form-control text-center rounded-pill mb-3" placeholder="Service Description" aria-label="Service_description" aria-describedby="basic-addon1" />
+                <input type="text" className="form-control text-center rounded-pill mb-3" placeholder="Service Description" aria-label="Service_description" aria-describedby="basic-addon1" ref={serviceDescription} />
               </div>
             </div>
             <div className="row">
               <div className="input-group mb-3">
                 <div className="input-group-prepend" />
-                <input type="number" className="form-control text-center rounded-pill mb-3" placeholder="Service Price" aria-label="Service_price" aria-describedby="basic-addon1" />
+                <input type="number" className="form-control text-center rounded-pill mb-3" placeholder="Service Price" aria-label="Service_price" aria-describedby="basic-addon1" ref={servicePrice} />
               </div>
             </div>
             <div className="row">
               <div className="input-group mb-3">
                 <div className="input-group-prepend" />
-                <input type="text" className="form-control text-center rounded-pill mb-3" placeholder="Service image URL" aria-label="Service_image" aria-describedby="basic-addon1" />
+                <input type="text" className="form-control text-center rounded-pill mb-3" placeholder="Service image URL" aria-label="Service_image" aria-describedby="basic-addon1" ref={serviceImage} />
               </div>
             </div>
             <div className="row">
               <div className="col">
-                <button type="button" className="btn btn-light w-100 textg fw-bolder rounded-pill mb-3">Create</button>
+                <button type="button" className="btn btn-light w-100 textg fw-bolder rounded-pill mb-3" onClick={printServiceFields}>Create</button>
               </div>
             </div>
           </div>
