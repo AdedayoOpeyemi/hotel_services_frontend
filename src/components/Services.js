@@ -5,7 +5,7 @@ function Services() {
   return (
     <div className="container">
       <div className="row vh-100 justify-content-center align-items-center">
-        <row>
+        <div className="row">
           <h1 className="text-center fw-bolder">
             All Services
           </h1>
@@ -13,14 +13,14 @@ function Services() {
             Please select a Service
           </p>
           <Carousel />
-          <row className="text-center fs-3">
+          <div className="text-center fs-3 row">
             <div className="col">
               <i className="fab fa-facebook" />
               <i className="fab fa-twitter px-3" />
               <i className="fab fa-instagram" />
             </div>
-          </row>
-        </row>
+          </div>
+        </div>
       </div>
 
     </div>
