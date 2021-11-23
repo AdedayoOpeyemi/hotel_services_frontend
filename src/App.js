@@ -8,12 +8,14 @@ import { checkLogin } from './redux/user/user_duck';
 import Reservations from './components/Reservations';
 import NewService from './components/NewService';
 import Delete from './components/Delete';
+import { defaultService } from './redux/service/service_duck';
 
 function App() {
   const dispatch = useDispatch();
 
   useEffect(() => {
     dispatch(checkLogin);
+    dispatch(defaultService);
     // dispatch(loginUser);
   });
 
