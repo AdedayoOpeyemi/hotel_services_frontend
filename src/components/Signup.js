@@ -1,7 +1,7 @@
 import React, { useRef } from 'react';
 import { useDispatch } from 'react-redux';
-import { Navigate } from 'react-router-dom';
-import { loginUser } from '../redux/user/user_duck';
+// import { Navigate } from 'react-router-dom';
+import { postUser } from '../redux/user/user_duck';
 import videos from './assets/pool.mp4';
 
 const Signup = () => {
@@ -12,16 +12,11 @@ const Signup = () => {
   const toServices = (input) => {
     if (input === ('' || null || undefined)) return;
 
-    dispatch(loginUser(input));
-
-    window.location.reload();
+    dispatch(postUser(input));
   };
-
-  const checkLogin = (localStorage.getItem('current_user')) ? <Navigate to="/services" /> : '';
 
   return (
     <header>
-      {checkLogin}
       <video autoPlay="autoplay" loop="loop" muted>
         <source src={videos} type="video/mp4" />
       </video>
