@@ -1,6 +1,6 @@
 import React, { useRef } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { Navigate } from 'react-router-dom';
+import { Navigate, Link } from 'react-router-dom';
 import { getUser } from '../redux/user/user_duck';
 import videos from './assets/pool.mp4';
 
@@ -30,7 +30,8 @@ const LoginForm = () => {
             <h1>Welcome to City Services</h1>
             <h5 className="fs-6 fw-normal">{ message }</h5>
             <input type="text" className="form-control my-3" id="userName" aria-describedby="emailHelp" placeholder="User Name" ref={inputTextField} />
-            <button className="btn green" type="button" onClick={() => toServices(inputTextField.current.value)}>Login/Sign in</button>
+            <button className="btn green" type="button" onClick={() => toServices(inputTextField.current.value)}>Login</button>
+            <Link to="/signup"><button className="btn green" type="button">Sign up</button></Link>
           </div>
         </div>
       </div>

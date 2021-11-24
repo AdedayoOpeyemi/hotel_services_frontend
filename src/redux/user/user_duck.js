@@ -31,7 +31,7 @@ const getUser = (username) => async (dispatch) => {
 };
 
 const postUser = (username) => async (dispatch) => {
-  axios.post(`${rootUrl}/api/v1/users`, { params: { name: username } })
+  axios.post(`${rootUrl}/api/v1/users`, { name: username })
     .then((response) => {
       const { data } = response;
 
