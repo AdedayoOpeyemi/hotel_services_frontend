@@ -13,13 +13,13 @@ function Service() {
             <div className="col-lg-6">
               <div className="card-body px-5">
                 <h2 className="card-title text-center mb-lg-5">Service name</h2>
-                <ul class="list-group border-0 mb-5">
-                  <li class="list-group-item list-group-item-light border-0 listbg">Service description</li>
-                  <li class="list-group-item list-group-item-dark border-0">Service Price</li>
-                  <li class="list-group-item list-group-item-light border-0 listbg">Service Duration 24 hours</li>
-                </ul>   
+                <ul className="list-group border-0 mb-5">
+                  <li className="list-group-item list-group-item-light border-0 listbg">Service description</li>
+                  <li className="list-group-item list-group-item-dark border-0">Service Price</li>
+                  <li className="list-group-item list-group-item-light border-0 listbg">Service Duration 24 hours</li>
+                </ul>
               </div>
-              <div class="row justify-content-center">
+              <div className="row justify-content-center">
                 <button type="button" className="btn btn-light w-50 green text-white fw-bolder rounded-pill mb-3">Reserve</button>
               </div>
             </div>
