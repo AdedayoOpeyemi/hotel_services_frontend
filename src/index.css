@@ -4,6 +4,10 @@
   background-color: red;
 }
 
+.imgcont {
+  max-height: 300px;
+}
+
 .green {
   background-color: #97c036 !important;
 }
@@ -18,7 +22,7 @@
 
 header {
   position: relative;
-  background-color: black;
+  background-color: #98bf0d;
   height: 100vh;
   min-height: 25rem;
   width: 100%;
@@ -44,4 +48,8 @@ header video {
 header .container {
   position: relative;
   z-index: 2;
+}
+
+.listbg {
+  background-color: whitesmoke !important;
 }

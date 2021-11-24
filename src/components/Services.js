@@ -1,29 +1,38 @@
-import React from 'react';
-import { useDispatch } from 'react-redux';
-import PropTypes from 'prop-types';
+import React, { useEffect } from 'react';
+import { useDispatch, useSelector } from 'react-redux';
 import { getServices } from '../redux/service/service_duck';
+import Carousel from './Carousel';
 
-function Services(props) {
-  const { services } = props;
+function Services() {
   const dispatch = useDispatch();
-  dispatch(getServices());
+  const services = useSelector((state) => state.services);
+
+  useEffect(() => {
+    dispatch(getServices());
+  }, []);
 
   return (
-    <div>
-      <h1 className="text-center">
-        services page
-      </h1>
-      <p>{JSON.stringify(services)}</p>
+    <div className="container">
+      <div className="row vh-100 justify-content-center align-items-center">
+        <div className="row">
+          <h1 className="text-center fw-bolder">
+            All Services
+          </h1>
+          <p className="fw-lighter text-center">
+            Please select a Service
+          </p>
+          <Carousel />
+          <div className="text-center fs-3 row">
+            <div className="col">
+              <i className="fab fa-facebook" />
+              <i className="fab fa-twitter px-3" />
+              <i className="fab fa-instagram" />
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
   );
 }
-
-Services.propTypes = {
-  services: PropTypes.arrayOf(PropTypes.object),
-};
-
-Services.defaultProps = {
-  services: [],
-};
 
 export default Services;

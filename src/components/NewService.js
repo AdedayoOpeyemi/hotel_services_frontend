@@ -2,7 +2,7 @@ import React, { useRef } from 'react';
 import { useDispatch } from 'react-redux';
 import { Link } from 'react-router-dom';
 import { postService } from '../redux/service/service_duck';
-import videos from './assets/office.mp4';
+import videos from './assets/box.mp4';
 
 function NewService() {
   const serviceName = useRef('');

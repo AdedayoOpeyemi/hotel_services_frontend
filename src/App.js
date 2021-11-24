@@ -8,16 +8,14 @@ import { checkLogin } from './redux/user/user_duck';
 import Reservations from './components/Reservations';
 import NewService from './components/NewService';
 import Delete from './components/Delete';
-import { getServices } from './redux/service/service_duck';
+import { getServices, defaultService } from './redux/service/service_duck';
+import Service from './components/Service';
 
 function App() {
   const dispatch = useDispatch();
-  const services = useSelector((state) => state.services);
 
   useEffect(() => {
     dispatch(checkLogin);
-    dispatch(getServices);
-    // dispatch(loginUser);
   }, []);
 
   return (
@@ -25,7 +23,8 @@ function App() {
       <BrowserRouter>
         <Routes>
           <Route exact path="/" element={<LoginForm />} />
-          <Route path="/services" element={<Services services={services} />} />
+          <Route path="/services" element={<Services />} />
+          <Route path="/service" element={<Service />} />
           <Route path="/reserve" element={<Reserve />} />
           <Route path="/reservations" element={<Reservations />} />
           <Route path="/newservice" element={<NewService />} />
