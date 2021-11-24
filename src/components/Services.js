@@ -1,11 +1,10 @@
 import React, { useEffect } from 'react';
-import { useDispatch, useSelector } from 'react-redux';
+import { useDispatch } from 'react-redux';
 import { getServices } from '../redux/service/service_duck';
 import Carousel from './Carousel';
 
 function Services() {
   const dispatch = useDispatch();
-  const services = useSelector((state) => state.services);
 
   useEffect(() => {
     dispatch(getServices());
@@ -21,7 +20,7 @@ function Services() {
           <p className="fw-lighter text-center">
             Please select a Service
           </p>
-          {services.services && <Carousel services={services.services} />}
+          <Carousel />
           <div className="text-center fs-3 row">
             <div className="col">
               <i className="fab fa-facebook" />
