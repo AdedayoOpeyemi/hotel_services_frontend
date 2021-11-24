@@ -11,12 +11,14 @@ const defaultService = () => ({
   message: 'no Service yet',
 });
 
-const getServices = () => async (dispatch) => {
+const getServices = () => (dispatch) => {
+  console.log('HI GETSERVICES!!!');
   axios.get(`${rootUrl}/api/v1/services`)
     .catch((error) => {
       console.log(error.message);
     }).then((response) => {
       console.log(response);
+      console.log(response.data.services);
 
       dispatch({
         type: GET_SERVICES,
@@ -30,7 +32,7 @@ const postService = (
   serviceDescription,
   servicePrice,
   serviceImage,
-) => async (dispatch) => {
+) => (dispatch) => {
   if ((serviceName
         || serviceDescription
         || servicePrice
@@ -70,7 +72,10 @@ const services = (state = [], action) => {
     case GET_SERVICES:
       console.log(action);
       console.log('ACTION:', GET_SERVICES);
-      return action.payload;
+      return {
+        ...state,
+        services: action.payload,
+      };
     case POST_SERVICE:
       return state;
     case MISSING_FIELDS:

@@ -1,4 +1,4 @@
-import { useDispatch } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 import React, { useEffect } from 'react';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import LoginForm from './components/LoginForm';
@@ -12,6 +12,7 @@ import { getServices } from './redux/service/service_duck';
 
 function App() {
   const dispatch = useDispatch();
+  const services = useSelector((state) => state.services);
 
   useEffect(() => {
     dispatch(checkLogin);
@@ -24,7 +25,7 @@ function App() {
       <BrowserRouter>
         <Routes>
           <Route exact path="/" element={<LoginForm />} />
-          <Route path="/services" element={<Services />} />
+          <Route path="/services" element={<Services services={services} />} />
           <Route path="/reserve" element={<Reserve />} />
           <Route path="/reservations" element={<Reservations />} />
           <Route path="/newservice" element={<NewService />} />
