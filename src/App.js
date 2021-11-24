@@ -10,6 +10,7 @@ import NewService from './components/NewService';
 import Delete from './components/Delete';
 import Service from './components/Service';
 import { defaultService } from './redux/service/service_duck';
+import Signup from './components/Signup'
 
 function App() {
   const dispatch = useDispatch();
@@ -25,6 +26,7 @@ function App() {
       <BrowserRouter>
         <Routes>
           <Route exact path="/" element={<LoginForm />} />
+          <Route path="/signup" element={<Signup />} />
           <Route path="/services" element={<Services />} />
           <Route path="/service" element={<Service />} />
           <Route path="/reserve" element={<Reserve />} />

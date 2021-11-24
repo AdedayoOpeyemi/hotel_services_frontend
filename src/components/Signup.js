@@ -4,7 +4,7 @@ import { Navigate } from 'react-router-dom';
 import { loginUser } from '../redux/user/user_duck';
 import videos from './assets/pool.mp4';
 
-const LoginForm = () => {
+const Signup = () => {
   const dispatch = useDispatch();
 
   const inputTextField = useRef('');
@@ -29,7 +29,7 @@ const LoginForm = () => {
         <div className="row vh-100 justify-content-center align-items-center">
           <div className="col text-center text-white">
             <h1>Welcome to City Services</h1>
-            <h5 className="fs-6 fw-normal">Please Log in with your Username</h5>
+            <h5 className="fs-6 fw-normal">Please Sign up with your Username</h5>
             <input type="text" className="form-control my-3" id="userName" aria-describedby="emailHelp" placeholder="User Name" ref={inputTextField} />
             <button className="btn green" type="button" onClick={() => toServices(inputTextField.current.value)}>Login/Sign in</button>
           </div>
@@ -39,4 +39,4 @@ const LoginForm = () => {
   );
 };
 
-export default LoginForm;
+export default Signup;
