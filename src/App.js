@@ -10,6 +10,7 @@ import NewService from './components/NewService';
 import Delete from './components/Delete';
 import Service from './components/Service';
 import { defaultService } from './redux/service/service_duck';
+import Sidebar from './components/Sidebar';
 
 function App() {
   const dispatch = useDispatch();
@@ -23,6 +24,7 @@ function App() {
   return (
     <div className="App">
       <BrowserRouter>
+        <Sidebar />
         <Routes>
           <Route exact path="/" element={<LoginForm />} />
           <Route path="/services" element={<Services />} />
