@@ -11,28 +11,26 @@ const defaultService = () => ({
   message: 'no Service yet',
 });
 
-const getServices = () => (dispatch) => {
-  console.log('HI GETSERVICES!!!');
-  axios.get(`${rootUrl}/api/v1/services`)
-    .catch((error) => {
-      console.log(error.message);
-    }).then((response) => {
-      console.log(response);
-      console.log(response.data.services);
-
-      dispatch({
-        type: GET_SERVICES,
-        payload: response.data.services,
-      });
+const getServices = () => (dispatch) => axios.get(`${rootUrl}/api/v1/services`)
+  .then((response) => {
+    response.data.services = response.data.services.map(
+      (service) => ({
+        ...service,
+        imageUrl: service.image_url,
+      }),
+    );
+    dispatch({
+      type: GET_SERVICES,
+      payload: response.data.services,
     });
-};
+  });
 
 const postService = (
   serviceName,
   serviceDescription,
   servicePrice,
   serviceImage,
-) => (dispatch) => {
+) => async (dispatch) => {
   if ((serviceName
         || serviceDescription
         || servicePrice
@@ -44,7 +42,7 @@ const postService = (
     return 'There are missing fields';
   }
 
-  axios({
+  await axios({
     method: 'post',
     url: `${rootUrl}/api/v1/services`,
     data: {
@@ -53,10 +51,7 @@ const postService = (
       price: servicePrice,
       image_url: serviceImage,
     },
-  }).catch((error) => {
-    console.log('ERROR:', error.message);
-    return error;
-  })
+  }).catch((error) => error)
     .then((response) => {
       dispatch({
         type: POST_SERVICE,
@@ -70,8 +65,6 @@ const postService = (
 const services = (state = [], action) => {
   switch (action.type) {
     case GET_SERVICES:
-      console.log(action);
-      console.log('ACTION:', GET_SERVICES);
       return {
         ...state,
         services: action.payload,

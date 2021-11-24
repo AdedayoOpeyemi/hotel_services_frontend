@@ -21,7 +21,7 @@ function Services() {
           <p className="fw-lighter text-center">
             Please select a Service
           </p>
-          <Carousel />
+          {services.services && <Carousel services={services.services} />}
           <div className="text-center fs-3 row">
             <div className="col">
               <i className="fab fa-facebook" />

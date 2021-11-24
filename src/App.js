@@ -1,4 +1,4 @@
-import { useDispatch, useSelector } from 'react-redux';
+import { useDispatch } from 'react-redux';
 import React, { useEffect } from 'react';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import LoginForm from './components/LoginForm';
@@ -8,7 +8,6 @@ import { checkLogin } from './redux/user/user_duck';
 import Reservations from './components/Reservations';
 import NewService from './components/NewService';
 import Delete from './components/Delete';
-import { getServices, defaultService } from './redux/service/service_duck';
 import Service from './components/Service';
 
 function App() {
