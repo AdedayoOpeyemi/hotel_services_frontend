@@ -9,6 +9,7 @@ import Reservations from './components/Reservations';
 import NewService from './components/NewService';
 import Delete from './components/Delete';
 import Service from './components/Service';
+import Sidebar from './components/Sidebar';
 
 function App() {
   const dispatch = useDispatch();
@@ -20,6 +21,7 @@ function App() {
   return (
     <div className="App">
       <BrowserRouter>
+        <Sidebar />
         <Routes>
           <Route exact path="/" element={<LoginForm />} />
           <Route path="/services" element={<Services />} />
