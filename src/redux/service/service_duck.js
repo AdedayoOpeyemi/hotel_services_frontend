@@ -73,7 +73,7 @@ const postService = ({
     dispatch(errors(error));
     throw error;
   }
-  return 'postService done';
+  return 'New Service Posted';
 };
 
 const services = (state = initialState, action) => {
