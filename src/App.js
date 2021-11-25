@@ -17,9 +17,7 @@ function App() {
 
   useEffect(() => {
     dispatch(defaultService);
-  });
   }, []);
-
 
   return (
     <div className="App">
