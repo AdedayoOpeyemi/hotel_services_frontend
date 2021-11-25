@@ -9,6 +9,8 @@ const isNumeric = (str) => {
   return !Number.isNaN(str) && !Number.isNaN(parseFloat(str));
 };
 
+const isNonNegative = (str) => parseFloat(str) >= 0;
+
 const serviceNameLength = (name) => {
   const minLength = 4;
   const maxLength = 30;
@@ -51,9 +53,9 @@ export default ({
     validation.description = 'Service names must have between 1 and 250 characters';
   }
 
-  if (!isNumeric(price)) {
+  if (!(isNumeric(price) && isNonNegative(price))) {
     validation.valid = false;
-    validation.price = 'Prices must be numeric';
+    validation.price = 'Prices must be nonnegative numbers';
   }
 
   if (!(imageUrlStatus === 'valid')) {

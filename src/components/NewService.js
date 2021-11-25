@@ -85,7 +85,7 @@ function NewService() {
               <div className="mb-3">
                 <div className="input-group">
                   <div className="input-group-prepend" />
-                  <input type="number" className="form-control text-center rounded-pill mb-3" placeholder="Service Price" aria-label="Service_price" aria-describedby="basic-addon1" onChange={handleTextChange('price')} />
+                  <input type="number" min="0" className="form-control text-center rounded-pill mb-3" placeholder="Service Price" aria-label="Service_price" aria-describedby="basic-addon1" onChange={handleTextChange('price')} />
                 </div>
                 {validation.price
                  && <ValidationError errorMessage={validation.price} />}
