@@ -1,5 +1,6 @@
 import React, { useRef } from 'react';
 import { useDispatch } from 'react-redux';
+import { Link } from 'react-router-dom';
 import { postService } from '../redux/service/service_duck';
 import videos from './assets/box.mp4';
 
@@ -9,17 +10,10 @@ function NewService() {
   const servicePrice = useRef('');
   const serviceImage = useRef('');
 
-  // const printServiceFields = () => {
-  //   console.log(
-  //     serviceName.current.value,
-  //     serviceDescription.current.value,
-  //     servicePrice.current.value,
-  //     serviceImage.current.value,
-  //   );
-  // };
-
   const dispatch = useDispatch();
   const dispatchService = () => {
+    // TODO: Add input validations
+
     dispatch(postService(
       serviceName.current.value,
       serviceDescription.current.value,
@@ -63,7 +57,7 @@ function NewService() {
             </div>
             <div className="row">
               <div className="col">
-                <button type="button" className="btn btn-light w-100 textg fw-bolder rounded-pill mb-3" onClick={dispatchService}>Create</button>
+                <Link to="/services"><button type="button" className="btn btn-light w-100 textg fw-bolder rounded-pill mb-3" onClick={dispatchService}>Create</button></Link>
               </div>
             </div>
           </div>

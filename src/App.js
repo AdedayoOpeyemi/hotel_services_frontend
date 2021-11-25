@@ -9,7 +9,6 @@ import Reservations from './components/Reservations';
 import NewService from './components/NewService';
 import Delete from './components/Delete';
 import Service from './components/Service';
-import { defaultService } from './redux/service/service_duck';
 import Sidebar from './components/Sidebar';
 
 function App() {
@@ -17,9 +16,7 @@ function App() {
 
   useEffect(() => {
     dispatch(checkLogin);
-    dispatch(defaultService);
-    // dispatch(loginUser);
-  });
+  }, []);
 
   return (
     <div className="App">

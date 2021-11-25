@@ -1,3 +1,4 @@
+/* eslint-disable */
 import axios from 'axios';
 
 const LOGIN_SUCCESS = 'LOGIN_SUCCESS';
@@ -108,3 +109,4 @@ const user = (state = [], action) => {
 
 export default user;
 export { checkLogin, loginUser };
+/* eslint-enable */

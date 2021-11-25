@@ -1,7 +1,15 @@
-import React from 'react';
+import React, { useEffect } from 'react';
+import { useDispatch } from 'react-redux';
+import { getServices } from '../redux/service/service_duck';
 import Carousel from './Carousel';
 
 function Services() {
+  const dispatch = useDispatch();
+
+  useEffect(() => {
+    dispatch(getServices());
+  }, []);
+
   return (
     <div className="container">
       <div className="row vh-100 justify-content-center align-items-center">
@@ -22,7 +30,6 @@ function Services() {
           </div>
         </div>
       </div>
-
     </div>
   );
 }
