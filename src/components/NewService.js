@@ -1,6 +1,6 @@
 import React, { useRef } from 'react';
 import { useDispatch } from 'react-redux';
-import { Link } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 import { postService } from '../redux/service/service_duck';
 import videos from './assets/box.mp4';
 
@@ -11,8 +11,18 @@ function NewService() {
   const serviceImage = useRef('');
 
   const dispatch = useDispatch();
+  const navigate = useNavigate();
+
+  const validateFields = () => {
+    if (!(serviceName.current.value
+      && serviceDescription.current.value
+      && servicePrice.current.value)) return false;
+    if (!serviceImage.current.value.includes('http')) return false;
+    return true;
+  };
+
   const dispatchService = () => {
-    // TODO: Add input validations
+    if (!validateFields()) return;
 
     dispatch(postService(
       serviceName.current.value,
@@ -20,6 +30,8 @@ function NewService() {
       servicePrice.current.value,
       serviceImage.current.value,
     ));
+
+    navigate('/services');
   };
 
   return (
@@ -46,7 +58,7 @@ function NewService() {
             <div className="row">
               <div className="input-group mb-3">
                 <div className="input-group-prepend" />
-                <input type="number" className="form-control text-center rounded-pill mb-3" placeholder="Service Price" aria-label="Service_price" aria-describedby="basic-addon1" ref={servicePrice} />
+                <input type="number" min="0" className="form-control text-center rounded-pill mb-3" placeholder="Service Price" aria-label="Service_price" aria-describedby="basic-addon1" ref={servicePrice} />
               </div>
             </div>
             <div className="row">
@@ -57,7 +69,7 @@ function NewService() {
             </div>
             <div className="row">
               <div className="col">
-                <Link to="/services"><button type="button" className="btn btn-light w-100 textg fw-bolder rounded-pill mb-3" onClick={dispatchService}>Create</button></Link>
+                <button type="button" className="btn btn-light w-100 textg fw-bolder rounded-pill mb-3" onClick={() => dispatchService()}>Create</button>
               </div>
             </div>
           </div>
