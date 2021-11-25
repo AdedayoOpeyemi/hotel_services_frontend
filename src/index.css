@@ -38,7 +38,7 @@ header video {
   min-height: 100%;
   width: auto;
   height: auto;
-  z-index: 1;
+  z-index: 0;
   -ms-transform: translateX(-50%) translateY(-50%);
   -moz-transform: translateX(-50%) translateY(-50%);
   -webkit-transform: translateX(-50%) translateY(-50%);
@@ -47,46 +47,12 @@ header video {
 
 header .container {
   position: relative;
+  z-index: 1;
+}
+
+.sidebar {
   z-index: 2;
-}
-
-.sidebarcont {
-  z-index: 99;
   position: absolute;
-}
-
-.nav-link:active,
-.nav-link:focus,
-.nav-link:hover {
-  background-color: #97c036;
-}
-
-i:active,
-i:focus,
-i:hover {
-  color: #97c036;
-}
-
-.nav-menu {
-  display: flex;
-  position: fixed;
-  top: 0;
-  left: -100%;
-  transition: 850ms;
-}
-
-.nav-menu.active {
-  left: 0;
-  width: 200px;
-  transition: 350ms;
-}
-
-.menubtn {
-  z-index: 0;
-  position: absolute;
-}
-
-.sidebarbg {
   background-color: white;
 }
 
