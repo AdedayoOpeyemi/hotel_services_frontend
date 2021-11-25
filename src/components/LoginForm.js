@@ -42,7 +42,7 @@ const LoginForm = () => {
             <h1>Welcome to City Services</h1>
             <h5 className="fs-6 fw-normal">{ message }</h5>
             <input type="text" className="form-control my-3" id="userName" aria-describedby="emailHelp" placeholder="User Name" ref={inputTextField} />
-            <button className="btn green" type="button" onClick={() => toServices(inputTextField.current.value)}>Login</button>
+            <button className="btn green mx-3" type="button" onClick={() => toServices(inputTextField.current.value)}>Login</button>
             <Link to="/signup"><button className="btn green" type="button">Sign up</button></Link>
           </div>
         </div>
