@@ -10,6 +10,7 @@ import Delete from './components/Delete';
 import Service from './components/Service';
 import { defaultService } from './redux/service/service_duck';
 import Signup from './components/Signup';
+import Sidebar from './components/Sidebar';
 
 function App() {
   const dispatch = useDispatch();
@@ -17,10 +18,13 @@ function App() {
   useEffect(() => {
     dispatch(defaultService);
   });
+  }, []);
+
 
   return (
     <div className="App">
       <BrowserRouter>
+        <Sidebar />
         <Routes>
           <Route exact path="/" element={<LoginForm />} />
           <Route path="/signup" element={<Signup />} />

@@ -22,7 +22,7 @@
 
 header {
   position: relative;
-  background-color: #98bf0d;
+  background-color: #97c036;
   height: 100vh;
   min-height: 25rem;
   width: 100%;
@@ -47,7 +47,13 @@ header video {
 
 header .container {
   position: relative;
+  z-index: 1;
+}
+
+.sidebar {
   z-index: 2;
+  position: absolute;
+  background-color: white;
 }
 
 .listbg {
