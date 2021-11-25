@@ -1,26 +1,32 @@
-import React, { useRef } from 'react';
+import React, { useRef, useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { Navigate, Link } from 'react-router-dom';
+import { useNavigate, Link } from 'react-router-dom';
 import { getUser } from '../redux/user/user_duck';
 import videos from './assets/pool.mp4';
 
 const LoginForm = () => {
   const dispatch = useDispatch();
+  const navigate = useNavigate();
 
   const inputTextField = useRef('');
   const message = useSelector((state) => state.user.message);
+
+  useEffect(() => {
+    if (localStorage.getItem('current_user')) {
+      navigate('/services');
+    }
+  }, []);
 
   const toServices = (input) => {
     if (input === ('' || null || undefined)) return;
 
     dispatch(getUser(input));
-  };
 
-  const checkLogin = (localStorage.getItem('current_user')) ? <Navigate to="/services" /> : '';
+    window.location.reload();
+  };
 
   return (
     <header>
-      {checkLogin}
       <video autoPlay="autoplay" loop="loop" muted>
         <source src={videos} type="video/mp4" />
       </video>
