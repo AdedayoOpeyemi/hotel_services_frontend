@@ -40,16 +40,16 @@ const getServices = () => (dispatch) => axios.get(`${rootUrl}/api/v1/services`)
     });
   });
 
-const postService = (
-  serviceName,
-  serviceDescription,
-  servicePrice,
-  serviceImage,
-) => async (dispatch) => {
-  if (!(serviceName
-        && serviceDescription
-        && servicePrice
-        && serviceImage)) {
+const postService = ({
+  name,
+  description,
+  price,
+  imageUrl,
+}) => async (dispatch) => {
+  if (!(name
+        && description
+        && price
+        && imageUrl)) {
     dispatch({
       type: MISSING_FIELDS,
       message: 'Missing fields',
@@ -62,10 +62,7 @@ const postService = (
       method: 'post',
       url: `${rootUrl}/api/v1/services`,
       data: {
-        name: serviceName,
-        description: serviceDescription,
-        price: servicePrice,
-        image_url: serviceImage,
+        name, description, price, image_url: imageUrl,
       },
     });
     dispatch({
@@ -74,9 +71,9 @@ const postService = (
     });
   } catch (error) {
     dispatch(errors(error));
-    return 'something went wrong';
+    throw error;
   }
-  return 'postService done';
+  return 'New Service Posted';
 };
 
 const services = (state = initialState, action) => {
