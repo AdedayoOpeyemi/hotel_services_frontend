@@ -18,7 +18,7 @@ const serviceNameLength = (name) => {
   return stringLengthBetween(name, minLength, maxLength);
 };
 
-const serviceNameUnique = (name, services) => !services.some((element) => element === name);
+const serviceNameUnique = (name, services) => !services.some((element) => element.name === name);
 
 const isServiceDescriptionValid = (description) => {
   const minLength = 1;
