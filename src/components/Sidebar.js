@@ -1,8 +1,11 @@
 import React, { useState } from 'react';
 import { NavLink } from 'react-router-dom';
+import { useDispatch } from 'react-redux';
+import { logOut } from '../redux/user/user_duck';
 
 function Sidebar() {
   const [sidebar, setSidebar] = useState(false);
+  const dispatch = useDispatch();
 
   const showSidebar = () => setSidebar(!sidebar);
 
@@ -33,7 +36,7 @@ function Sidebar() {
             </NavLink>
           </div>
           <div className="text-center row mt-auto pb-5">
-            <NavLink to="/" className="nav-link text-dark">
+            <NavLink to="" type="button" onClick={() => dispatch(logOut)} className="nav-link text-dark">
               Log out
             </NavLink>
             <div className="col fs-3">

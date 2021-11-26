@@ -12,6 +12,8 @@ const LoginForm = () => {
   const message = useSelector((state) => state.user.message);
 
   useEffect(() => {
+    navigate('/login');
+
     if (localStorage.getItem('current_user')) {
       navigate('/services');
     }
