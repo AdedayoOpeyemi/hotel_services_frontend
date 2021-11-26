@@ -3,9 +3,18 @@ import axios from 'axios';
 
 const LOGIN = 'LOGIN';
 const SIGNUP = 'SIGNUP';
+const LOGOUT = 'LOGOUT;'
 
 const port = '3000';
 const rootUrl = `http://localhost:${port}`;
+
+const logOut = (dispatch) => {
+  localStorage.clear();
+
+  dispatch({
+    type: LOGOUT,
+  })
+}
 
 const getUser = (username) => (dispatch) => {
   return axios.get(`${rootUrl}/api/v1/users`, { params: { name: username } })
@@ -56,7 +65,7 @@ const postUser = (username) => async (dispatch) => {
     });
 };
 
-const user = (state = [], action) => {
+const user = (state = {}, action) => {
   switch (action.type) {
     case LOGIN:
       return {
@@ -75,11 +84,13 @@ const user = (state = [], action) => {
           message: action.message,
         },
       };
+    case LOGOUT:
+      return {};
     default:
       return state;
   }
 };
 
 export default user;
-export { getUser, postUser };
+export { getUser, postUser, logOut };
 
