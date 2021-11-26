@@ -3,7 +3,7 @@ import ServiceCards from './ServiceCards';
 
 function Carousel() {
   return (
-    <div className="container w-75 mh-50">
+    <div className="container w-50 mh-50">
       <div id="carouselExampleCaptions" className="carousel slide" data-bs-ride="carousel">
         <div className="carousel-inner ">
           <ServiceCards />

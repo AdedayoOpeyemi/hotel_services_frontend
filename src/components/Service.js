@@ -14,10 +14,10 @@ const Service = () => {
       <div className="row vh-100 justify-content-center align-items-center">
         <div className="card mb-3 border-0">
           <div className="row g-0">
-            <div className="col-md-6">
+            <div className="col-md-5">
               <img src={service.imageUrl} className="img-fluid" alt="..." />
             </div>
-            <div className="col-md-6">
+            <div className="col-md-7">
               <div className="card-body px-5">
                 <h2 className="card-title text-center mb-lg-5">{service.name}</h2>
                 <ul className="list-group border-0 mb-5">
