@@ -11,7 +11,7 @@ function Sidebar() {
 
   return (
     <div className="sidebarcont m-2">
-      <button type="button" className="btn green menubtn " onClick={showSidebar}>
+      <button type="button" className="btn green menubtn" onClick={showSidebar}>
         <i className="fas fa-bars" />
       </button>
       <nav className={sidebar ? 'nav-menu active mt-5 sidebarbg ' : 'nav-menu mt-5 sidebarbg'}>
@@ -31,7 +31,7 @@ function Sidebar() {
             <NavLink to="/newservice" className="nav-link text-dark">
               Add Services
             </NavLink>
-            <NavLink to="/" className="nav-link text-dark">
+            <NavLink to="/delete" className="nav-link text-dark">
               Delete service
             </NavLink>
           </div>
