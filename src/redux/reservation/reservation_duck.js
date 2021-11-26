@@ -1,10 +1,11 @@
 import axios from 'axios';
-import { useSelector } from 'react-redux';
+// import { useSelector } from 'react-redux';
 
 const POST_RESERVATION = 'POST_RESERVATION';
 const GET_RESERVATION = 'GET_RESERVATION';
 const LOAD_RESERVATION = 'LOAD_RESERVATION';
 const CANCEL_RESERVATION = 'CANCEL_RESERVATION';
+const MISSING_FIELDS = 'MISSING_FIELDS';
 
 const port = '3000';
 const rootUrl = `http://localhost:${port}`;
@@ -15,11 +16,6 @@ const rootUrl = `http://localhost:${port}`;
 
 const initialState = { reservations: [] };
 
-// const current_user_id = localStorage.getItem('current_user');
-//   axios.get(`${rootUrl}/api/v1/users/{current_user_id}/reservations`)
-//     .then((response) => {
-//       const { data } = response;
-
 const getReservation = () => ({
   type: GET_RESERVATION,
 });
@@ -29,28 +25,9 @@ const loadReservation = (payload) => ({
   payload,
 });
 
-const cancelReservation = (reservationId = 20) => async (dispatch) {
-  const response = await axios({
-    method: 'delete',
-    url: `api/v1/reservations/${reservationId}`
-  });
-  console.log(response.message);
-};
-
-// const cancelReservationToAPI = () => async (dispatch) => {
-//   dispatch(getReservation);
-//   const currentUserId = useSelector((state) => state.user);
-
-//   axios({
-//     method: 'post',
-//     url: `${rootUrl}/api/v1/users/${currentUserId}/reservations`,
-//   }).catch((error) => {
-//     console.log('ERROR:', error.message);
-//   })
-//     .then((response) => {
-//       dispatch(loadReservation(response.data.reservations));
-//     });
-// };
+const cancelReservation = () => ({
+  type: CANCEL_RESERVATION,
+});
 
 const getReservationData = (userId = 1) => async (dispatch) => {
   // dispatch(getReservation);
@@ -60,7 +37,57 @@ const getReservationData = (userId = 1) => async (dispatch) => {
   });
   console.log(response.data.reservations);
   dispatch(loadReservation(response.data.reservations));
+};
 
+// /api/v1/users/:user_id/services/:service_id/reservation
+
+// const postReservationToApi = (
+//   date,
+//   city
+// ) => async (dispatch) => {
+//   if ((date || city) === '') {
+//     dispatch({
+//       type: MISSING_FIELDS,
+//       message: 'Missing fields',
+//     });
+//     return 'There are missing fields';
+//   }
+
+//   axios({
+//     method: 'post',
+//     url: `${rootUrl}/api/v1/services`,
+//     data: {
+//       name: serviceName,
+//       description: serviceDescription,
+//       price: servicePrice,
+//       image_url: serviceImage,
+//     },
+//   }).catch((error) => {
+//     console.log('ERROR:', error.message);
+//   })
+//     .then((response) => {
+//       dispatch({
+//         type: POST_SERVICE,
+//         message: response.data.message,
+//       });
+//     });
+
+//   return 'postService done';
+// };
+
+const cancelReservationToApi = (reservationId = 20, userId) => async (dispatch) => {
+  // dispatch(cancelReservation());
+  // console.log(cancelReservation());
+  // const currentUserId = useSelector((state) => state.user);
+  const response = await axios({
+    method: 'delete',
+    url: `${rootUrl}/api/v1/reservations/${reservationId}`,
+  });
+  console.log(response.data.reservations);
+  // .catch((error) => {
+  //   console.log('ERROR:', error.message);
+  // })
+  dispatch(getReservationData(userId));
 };
 
 const reservations = (state = initialState, action) => {
@@ -73,11 +100,11 @@ const reservations = (state = initialState, action) => {
       console.log(action.payload);
       return action.payload;
     case CANCEL_RESERVATION:
-      return action.payload;
+      return state;
     default:
       return state;
   }
 };
 
 export default reservations;
-export { getReservationData };
+export { getReservationData, cancelReservationToApi };
