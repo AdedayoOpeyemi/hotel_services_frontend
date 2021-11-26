@@ -4,7 +4,12 @@
 
 > React Frontend of the project
 
-![screenshot](./app_screenshot.png)
+![Login](./src/components/assets/login.png)
+![Services](./src/components/assets/services.png)
+![Service](./src/components/assets/service.png)
+![Reserve](./src/components/assets/reserve.png)
+![Add](./src/components/assets/add.png)
+![Delete](./src/components/assets/delete.png)
 
 Additional description about the project and its features.
 
@@ -19,22 +24,35 @@ Additional description about the project and its features.
 Coming soon
 
 
-## Getting Started
-
-**This is an example of how you may give instructions on setting up your project locally.**
-**Modify this file to match your project, remove sections that don't apply. For example: delete the testing section if the currect project doesn't require testing.**
-
-Coming son
-
+### Installation
+1. Clone the repo
+   ```sh
+   git clone git@github.com:AdedayoOpeyemi/hotel_services_frontend.git
+   ```
+2. Install NPM packages
+   ```sh
+   npm install
+   ```
+   2. Start the server 
+   ```sh
+   npm start
+   ```
+3. Back-end API access on:
+    ```
+    https://github.com/RokoVarano/hotel_services_backend
+    ```
 ### Prerequisites
 
-### Setup
-
-### Install
+* No prerequisites needed for this project.
 
 ### Usage
 
-### Run tests
+* Login or Sign up only with username.
+* In the Carousel select the service you want.
+* The selection will give more details about the project.
+* To add a service fill and submit the form.
+* To delete a service, click on the delete button. 
+
 
 ### Deployment
 
