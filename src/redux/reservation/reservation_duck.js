@@ -8,7 +8,7 @@ const CANCEL_RESERVATION = 'CANCEL_RESERVATION';
 const port = '3000';
 const rootUrl = `http://localhost:${port}`;
 
-const initialState = { reservations: [] };
+const initialState = [];
 
 const getReservation = () => ({
   type: GET_RESERVATION,
