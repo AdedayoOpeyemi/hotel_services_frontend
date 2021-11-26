@@ -1,5 +1,6 @@
 import React from 'react';
 import { useSelector } from 'react-redux';
+import { Link } from 'react-router-dom';
 
 function ServiceCards() {
   const services = useSelector((state) => state.services);
@@ -15,7 +16,7 @@ function ServiceCards() {
             className={`carousel-item ${index === 0 ? 'active' : ''}`}
           >
             <div className="card border-0 w-100 px-5">
-              <img src={imageUrl} className="img-fluid imgcont" alt="..." />
+              <Link to={`/services/${id}`}><img src={imageUrl} className="img-fluid imgcont" alt="..." /></Link>
               <div className="card-body text-center">
                 <h5 className="card-title text-center">{name}</h5>
                 <p className="card-text">{description}</p>
