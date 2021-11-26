@@ -75,19 +75,16 @@ const getReservationData = (userId = 1) => async (dispatch) => {
 //   return 'postService done';
 // };
 
+const postReservationToApi = ()
+
 const cancelReservationToApi = (reservationId = 20, userId) => async (dispatch) => {
-  // dispatch(cancelReservation());
-  // console.log(cancelReservation());
-  // const currentUserId = useSelector((state) => state.user);
   const response = await axios({
     method: 'delete',
     url: `${rootUrl}/api/v1/reservations/${reservationId}`,
   });
-  console.log(response.data.reservations);
-  // .catch((error) => {
-  //   console.log('ERROR:', error.message);
-  // })
-  dispatch(getReservationData(userId));
+  if (response.status === 202) {
+    dispatch(getReservationData(userId));
+  }
 };
 
 const reservations = (state = initialState, action) => {

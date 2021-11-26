@@ -13,7 +13,7 @@ function Reservations() {
   return (
     <h1 className="text-center">
       My Reservations page
-      <button type="button" onClick={() => dispatch(cancelReservationToApi(21, 1))}>
+      <button type="button" onClick={() => dispatch(cancelReservationToApi(22, 1))}>
         Cancel Reservation
       </button>
     </h1>
