@@ -46,10 +46,10 @@ const postReservationToApi = ({
   if (response.status === 201) {
     await dispatch(getReservationData(userId));
   }
-}
+};
 
 const cancelReservationToApi = (reservationId, userId) => async (dispatch) => {
-  dispatch(cancelReservation())
+  dispatch(cancelReservation());
   const response = await axios({
     method: 'delete',
     url: `${rootUrl}/api/v1/reservations/${reservationId}`,
