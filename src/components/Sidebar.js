@@ -33,7 +33,7 @@ function Sidebar() {
             </NavLink>
           </div>
           <div className="text-center row mt-auto pb-5">
-          <NavLink to="/" className="nav-link text-dark">
+            <NavLink to="/" className="nav-link text-dark">
               Log out
             </NavLink>
             <div className="col fs-3">
