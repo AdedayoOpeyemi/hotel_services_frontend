@@ -29,7 +29,7 @@ function App() {
           {['/', '/login'].map((path) => <Route exact path={path} element={<LoginForm />} key={path} />)}
           <Route path="/signup" element={<Signup />} />
           <Route path="/services" element={<Services />} />
-          <Route path="/service" element={<Service />} />
+          <Route path="/services/:id" element={<Service />} />
           <Route path="/reserve" element={<Reserve />} />
           <Route path="/reservations" element={<Reservations />} />
           <Route path="/newservice" element={<NewService />} />

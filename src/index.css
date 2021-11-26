@@ -93,3 +93,7 @@ i:hover {
 .listbg {
   background-color: whitesmoke !important;
 }
+
+a:link {
+  text-decoration: none;
+}

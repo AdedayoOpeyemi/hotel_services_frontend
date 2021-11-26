@@ -1,21 +1,28 @@
 import React from 'react';
-import office from './assets/office.jpeg';
+import { Navigate, useParams } from 'react-router-dom';
+import { useSelector } from 'react-redux';
 
-function Service() {
+const Service = () => {
+  const { id } = useParams();
+  const services = useSelector((state) => state.services);
+  const service = services.services.find((service) => service.id.toString() === id);
+
+  if (service === undefined) return <Navigate to="/services" />;
+
   return (
     <div className="container">
       <div className="row vh-100 justify-content-center align-items-center">
         <div className="card mb-3 border-0">
           <div className="row g-0">
-            <div className="col-md-6">
-              <img src={office} className="img-fluid" alt="..." />
+            <div className="col-md-5">
+              <img src={service.imageUrl} className="img-fluid" alt="..." />
             </div>
-            <div className="col-md-6">
+            <div className="col-md-7">
               <div className="card-body px-5">
-                <h2 className="card-title text-center mb-lg-5">Service name</h2>
+                <h2 className="card-title text-center mb-lg-5">{service.name}</h2>
                 <ul className="list-group border-0 mb-5">
-                  <li className="list-group-item list-group-item-light border-0 listbg">Service description</li>
-                  <li className="list-group-item list-group-item-dark border-0">Service Price</li>
+                  <li className="list-group-item list-group-item-light border-0 listbg">{service.description}</li>
+                  <li className="list-group-item list-group-item-dark border-0">{service.price}</li>
                   <li className="list-group-item list-group-item-light border-0 listbg">Service Duration 24 hours</li>
                 </ul>
               </div>
@@ -29,6 +36,6 @@ function Service() {
 
     </div>
   );
-}
+};
 
 export default Service;
