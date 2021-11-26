@@ -15,6 +15,7 @@ const getUser = (username) => async (dispatch) => {
         {
           type: LOGIN,
           userId: data.user_id,
+          name: username,
           message: data.message,
         },
       );
@@ -24,6 +25,7 @@ const getUser = (username) => async (dispatch) => {
       dispatch(
         {
           type: LOGIN,
+          name: null,
           userId: null,
           message: error.response.data.errors.reduce((acc, error) => `${acc}, ${error}`, ''),
         },
@@ -60,6 +62,7 @@ const user = (state = [], action) => {
       return {
         ...state,
         user: {
+          username: action.name,
           userId: action.userId,
           message: action.message,
         },
