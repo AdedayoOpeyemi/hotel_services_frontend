@@ -20,9 +20,7 @@ const LoginForm = () => {
   const toServices = (input) => {
     if (input === ('' || null || undefined)) return;
 
-    dispatch(getUser(input));
-
-    window.location.reload();
+    dispatch(getUser(input)).then(() => navigate('/services'));
   };
 
   return (

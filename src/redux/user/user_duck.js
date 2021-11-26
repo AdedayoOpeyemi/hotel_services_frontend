@@ -7,8 +7,8 @@ const SIGNUP = 'SIGNUP';
 const port = '3000';
 const rootUrl = `http://localhost:${port}`;
 
-const getUser = (username) => async (dispatch) => {
-  axios.get(`${rootUrl}/api/v1/users`, { params: { name: username } })
+const getUser = (username) => (dispatch) => {
+  return axios.get(`${rootUrl}/api/v1/users`, { params: { name: username } })
     .then((response) => {
       const { data } = response;
       dispatch(
