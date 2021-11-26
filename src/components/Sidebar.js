@@ -32,8 +32,11 @@ function Sidebar() {
               Delete service
             </NavLink>
           </div>
-          <div className="text-center fs-3 row mt-auto pb-5">
-            <div className="col">
+          <div className="text-center row mt-auto pb-5">
+          <NavLink to="/" className="nav-link text-dark">
+              Log out
+            </NavLink>
+            <div className="col fs-3">
               <i className="fab fa-facebook" />
               <i className="fab fa-twitter px-3" />
               <i className="fab fa-instagram" />
