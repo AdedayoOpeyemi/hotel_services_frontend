@@ -22,7 +22,7 @@ function Sidebar() {
             <NavLink to="/reserve" className="nav-link text-dark">
               Reserve
             </NavLink>
-            <NavLink to="/" className="nav-link text-dark">
+            <NavLink to="/reservations" className="nav-link text-dark">
               My Reservations
             </NavLink>
             <NavLink to="/newservice" className="nav-link text-dark">

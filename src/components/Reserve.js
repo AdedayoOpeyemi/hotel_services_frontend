@@ -11,18 +11,18 @@ function Reserve() {
         <div className="row vh-100 justify-content-center align-items-center">
           <div className="row">
             <h1 className="text-center">New Reservation</h1>
-            <div className="row my-5">
-              <div className="col">
+            <div className="row my-3">
+              <div className="col-md-6">
                 <div className="input-group mb-3">
                   <input type="text" className="form-control rounded-pill border-0" placeholder="Username" aria-label="Username" aria-describedby="basic-addon1" />
                 </div>
               </div>
-              <div className="col">
+              <div className="col-md-6">
                 <input type="text" className="form-control rounded-pill border-0" placeholder="Service Name" aria-label="service_name" aria-describedby="basic-addon1" />
               </div>
             </div>
             <div className="row">
-              <div className="col">
+              <div className="col-md-2">
                 <div className="input-group mb-3 ">
                   <select className="form-select rounded-pill btng text-white border-0" id="year">
                     <option value="2021">2021</option>
@@ -34,7 +34,7 @@ function Reserve() {
                   </select>
                 </div>
               </div>
-              <div className="col ">
+              <div className="col-md-3 ">
                 <div className="input-group mb-3">
                   <select className="form-select rounded-pill btng text-white border-0" id="month">
                     <option value="01">January</option>
@@ -52,7 +52,7 @@ function Reserve() {
                   </select>
                 </div>
               </div>
-              <div className="col">
+              <div className="col-md-2">
                 <div className="input-group mb-3">
                   <select className="form-select rounded-pill btng text-white border-0" id="day">
                     <option value="01">01</option>
@@ -89,7 +89,7 @@ function Reserve() {
                   </select>
                 </div>
               </div>
-              <div className="col">
+              <div className="col-md-3">
                 <div className="input-group mb-3 ">
                   <select className="form-select rounded-pill btng text-white border-0" id="city">
                     <option value="London">London</option>
@@ -101,7 +101,7 @@ function Reserve() {
                   </select>
                 </div>
               </div>
-              <div className="col">
+              <div className="col-md-2">
                 <button type="button" className="border-0 btn btn-light w-100 textg fw-bolder rounded-pill">Reserve</button>
               </div>
             </div>
