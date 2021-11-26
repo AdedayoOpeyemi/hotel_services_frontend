@@ -36,7 +36,7 @@ function Sidebar() {
             </NavLink>
           </div>
           <div className="text-center row mt-auto pb-5">
-            <NavLink to="" type="button" onClick={() => dispatch(logOut())} className="nav-link text-dark">
+            <NavLink to="" type="button" onClick={() => dispatch(logOut)} className="nav-link text-dark">
               Log out
             </NavLink>
             <div className="col fs-3">
