@@ -75,7 +75,31 @@ const getReservationData = (userId = 1) => async (dispatch) => {
 //   return 'postService done';
 // };
 
-const postReservationToApi = ()
+const postReservationToApi = ({
+  userId,
+  serviceId,
+  date,
+  city
+}) => async (dispatch) => {
+
+  try {
+    const response = await axios({
+      method: 'post',
+      url: `${rootUrl}/api/v1/users/${userId}/services/${serviceId}/reservation`,
+      data: { date, city },
+    });
+    dispatch({
+      type: POST_RESERVATION,
+      message: response.message,
+    });
+    if (response.status === 201) {
+      await dispatch(getReservationData(userId));
+    }
+  } catch (error) {
+    dispatch(errors(error));
+    throw error;
+  }
+}
 
 const cancelReservationToApi = (reservationId = 20, userId) => async (dispatch) => {
   const response = await axios({
@@ -104,4 +128,4 @@ const reservations = (state = initialState, action) => {
 };
 
 export default reservations;
-export { getReservationData, cancelReservationToApi };
+export { getReservationData, cancelReservationToApi, postReservationToApi };
