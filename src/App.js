@@ -1,6 +1,8 @@
 import { useDispatch } from 'react-redux';
 import React, { useEffect } from 'react';
-import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import {
+  BrowserRouter, Routes, Route,
+} from 'react-router-dom';
 import LoginForm from './components/LoginForm';
 import Services from './components/Services';
 import Reserve from './components/Reserve';
@@ -24,7 +26,7 @@ function App() {
       <BrowserRouter>
         <Sidebar />
         <Routes>
-          <Route exact path="/" element={<LoginForm />} />
+          {['/', '/login'].map((path) => <Route exact path={path} element={<LoginForm />} key={path} />)}
           <Route path="/signup" element={<Signup />} />
           <Route path="/services" element={<Services />} />
           <Route path="/service" element={<Service />} />
