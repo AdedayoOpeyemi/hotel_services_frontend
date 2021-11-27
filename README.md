@@ -1,10 +1,17 @@
 ![](https://img.shields.io/badge/Microverse-blueviolet)
 
-# Hotel Booking app Frontend
+# Hotel Booking app Front-end
+
+### Back-end API access on:
+    https://github.com/RokoVarano/hotel_services_backend
 
 > React Frontend of the project
 
-![screenshot](./app_screenshot.png)
+![Login](./src/components/assets/login.png)
+![Services](./src/components/assets/services.png)
+![Service](./src/components/assets/service.png)
+![Reserve](./src/components/assets/reserve.png)
+![Delete](./src/components/assets/delete.png)
 
 Additional description about the project and its features.
 
@@ -13,31 +20,39 @@ Additional description about the project and its features.
 - Javascript
 - React
 - Redux
+- Bootstrap
 
-## Live Demo
+### Installation
+**Follow the Back-end instructions available on:**
+```
+https://github.com/RokoVarano/hotel_services_backend
+```
 
-Coming soon
-
-
-## Getting Started
-
-**This is an example of how you may give instructions on setting up your project locally.**
-**Modify this file to match your project, remove sections that don't apply. For example: delete the testing section if the currect project doesn't require testing.**
-
-Coming son
-
+1. Clone the repo
+   ```sh
+   git clone git@github.com:AdedayoOpeyemi/hotel_services_frontend.git
+   ```
+2. Install NPM packages
+   ```sh
+   npm install
+   ```
+   2. Start the server  
+   ```sh
+   npm start 
+   ```
 ### Prerequisites
 
-### Setup
-
-### Install
+* No prerequisites needed for this project.
 
 ### Usage
 
-### Run tests
-
-### Deployment
-
+* Login or Sign up only with username.
+* On the services page select the service that you want.
+* The selection will give more details on the service page about the selected one.
+* To add a service fill and submit the form.
+* To delete a service, click on the delete button.
+* On My Reservations page you will be able to see a list of all your reservations, and also be able to cancel any of them.
+* On the Reserve page you will be able to generate a new reservations for any service by filling up the date and the city of your choice. 
 
 ## Authors
 
