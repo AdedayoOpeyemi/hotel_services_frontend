@@ -15,7 +15,7 @@ const Service = () => {
         <div className="card mb-3 border-0">
           <div className="row g-0">
             <div className="col-md-5">
-              <img src={service.imageUrl} className="img-fluid" alt="..." />
+              <img src={service.imageUrl} className="img-fluid w-100" alt="..." />
             </div>
             <div className="col-md-7">
               <div className="card-body px-5">

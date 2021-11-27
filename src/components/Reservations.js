@@ -31,7 +31,7 @@ function Reservations() {
                   <div className="card-body text-center mt-lg-5">
                     <h2 className="card-title mb-3">{serviceName}</h2>
                     <ul className="list-group border-0 mb-5">
-                      <li className="list-group-item list-group-item-light border-0 listbg mt-lg-5">{serviceDescription}</li>
+                      <li className="list-group-item list-group-item-dark border-0 mt-lg-5">{serviceDescription}</li>
                       <li className="list-group-item list-group-item-light border-0 listbg">
                         {day}
                         /
