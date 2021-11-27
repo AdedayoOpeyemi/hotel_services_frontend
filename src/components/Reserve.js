@@ -60,7 +60,7 @@ function Reserve({ serviceId }) {
             <div className="row my-3">
               <div className="col-md-6">
                 <div className="input-group mb-3">
-                  <input type="text" className="form-control rounded-pill border-0 text-center" value={user.username} aria-label="Username" aria-describedby="basic-addon1" disabled/>
+                  <input type="text" className="form-control rounded-pill border-0 text-center" value={user.username} aria-label="Username" aria-describedby="basic-addon1" disabled />
                 </div>
               </div>
               <div className="col-md-6">
