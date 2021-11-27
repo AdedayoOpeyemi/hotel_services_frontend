@@ -24,20 +24,31 @@ const defaultState = {
   }
 };
 
+const loadUser = (dispatch) => {
+  const newUser = JSON.parse(localStorage.getItem('current_user'));
+  dispatch({
+    type: LOGIN,
+    ...newUser,
+  });
+}
+
 const getUser = (username) => (dispatch) => {
   return axios.get(`${rootUrl}/api/v1/users`, { params: { name: username } })
     .then((response) => {
       const { data } = response;
+      const newUser = {
+        userId: data.user_id,
+        name: username,
+        message: data.message,
+      };
       dispatch(
         {
           type: LOGIN,
-          userId: data.user_id,
-          name: username,
-          message: data.message,
+          ...newUser,
         },
       );
 
-      localStorage.setItem('current_user', data.user_id);
+      localStorage.setItem('current_user', JSON.stringify(newUser));
     }).catch((error) => {
       dispatch(
         {
@@ -101,4 +112,4 @@ const user = (state = defaultState, action) => {
 };
 
 export default user;
-export { getUser, postUser, logOut };
+export { getUser, postUser, logOut, loadUser };

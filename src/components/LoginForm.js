@@ -1,7 +1,7 @@
 import React, { useRef, useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { useNavigate, Link } from 'react-router-dom';
-import { getUser } from '../redux/user/user_duck';
+import { getUser, loadUser } from '../redux/user/user_duck';
 import videos from './assets/pool.mp4';
 
 const LoginForm = () => {
@@ -15,6 +15,7 @@ const LoginForm = () => {
     navigate('/login');
 
     if (localStorage.getItem('current_user')) {
+      dispatch(loadUser);
       navigate('/services');
     }
   }, []);
