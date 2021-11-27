@@ -1,7 +1,53 @@
-import React from 'react';
+import React, { useState } from 'react';
+import { useSelector } from 'react-redux';
+import PropTypes from 'prop-types';
 import videos from './assets/resort.mp4';
+import {
+  today,
+  nextYears,
+  nextMonths,
+  nextDays,
+} from '../utils/dates';
 
-function Reserve() {
+const yearsToDisplay = 5;
+
+const findDefault = (serviceId, services) => {
+  const found = services.find(({ id }) => id === serviceId);
+  if (found) return found.id;
+  return -1;
+};
+
+function Reserve({ serviceId }) {
+  const user = useSelector((state) => state.user.user);
+  const services = useSelector((state) => state.services.services);
+  const [newReservation, setNewReservation] = useState({
+    userId: user.userId,
+    serviceId,
+    city: '',
+    date: today,
+  });
+
+  const handleDateChange = (dateField) => (e) => {
+    setNewReservation((reservation) => {
+      const { date } = reservation;
+      return {
+        ...reservation,
+        date: {
+          ...date,
+          [dateField]: parseInt(e.target.value, 10),
+        },
+      };
+    });
+  };
+
+  const handleServiceChange = (e) => {
+    const newId = parseInt(e.target.value, 10);
+    setNewReservation((state) => ({
+      ...state,
+      serviceId: newId,
+    }));
+  };
+
   return (
     <header>
       <video autoPlay="autoplay" loop="loop" muted>
@@ -14,78 +60,72 @@ function Reserve() {
             <div className="row my-3">
               <div className="col-md-6">
                 <div className="input-group mb-3">
-                  <input type="text" className="form-control rounded-pill border-0" placeholder="Username" aria-label="Username" aria-describedby="basic-addon1" />
+                  <input type="text" className="form-control rounded-pill border-0 text-center" value={user.username} aria-label="Username" aria-describedby="basic-addon1" disabled />
                 </div>
               </div>
               <div className="col-md-6">
-                <input type="text" className="form-control rounded-pill border-0" placeholder="Service Name" aria-label="service_name" aria-describedby="basic-addon1" />
+                <select
+                  className="form-select rounded-pill border-0"
+                  id="service-name"
+                  onChange={handleServiceChange}
+                  defaultValue={findDefault(serviceId, services)}
+                >
+                  { services.map(({ id, name }) => (
+                    <option
+                      key={`service-${id}`}
+                      value={id}
+                    >
+                      {name}
+                    </option>
+                  ))}
+                  <option
+                    value={-1}
+                  >
+                    Choose a service to reserve
+                  </option>
+                </select>
               </div>
             </div>
             <div className="row">
               <div className="col-md-2">
                 <div className="input-group mb-3 ">
-                  <select className="form-select rounded-pill btng text-white border-0" id="year">
-                    <option value="2021">2021</option>
-                    <option value="2022">2022</option>
-                    <option value="2023">2023</option>
-                    <option value="2021">2024</option>
-                    <option value="2022">2025</option>
-                    <option value="2023">2026</option>
+                  <select className="form-select rounded-pill btng text-white border-0" id="year" onChange={handleDateChange('year')}>
+                    { nextYears(yearsToDisplay).map((year) => (
+                      <option
+                        key={`year-${year}`}
+                        value={year}
+                      >
+                        {year}
+                      </option>
+                    ))}
                   </select>
                 </div>
               </div>
               <div className="col-md-3 ">
                 <div className="input-group mb-3">
-                  <select className="form-select rounded-pill btng text-white border-0" id="month">
-                    <option value="01">January</option>
-                    <option value="02">February</option>
-                    <option value="03">March</option>
-                    <option value="04">April</option>
-                    <option value="05">May</option>
-                    <option value="06">June</option>
-                    <option value="01">July</option>
-                    <option value="02">August</option>
-                    <option value="03">September</option>
-                    <option value="04">October</option>
-                    <option value="05">November</option>
-                    <option value="06">December</option>
+                  <select className="form-select rounded-pill btng text-white border-0" id="month" onChange={handleDateChange('month')}>
+                    { nextMonths(newReservation.date).map((month) => (
+                      <option
+                        key={`month-${month[1]}`}
+                        value={month[1]}
+                      >
+                        {month[0]}
+                      </option>
+                    ))}
                   </select>
                 </div>
               </div>
               <div className="col-md-2">
                 <div className="input-group mb-3">
-                  <select className="form-select rounded-pill btng text-white border-0" id="day">
-                    <option value="01">01</option>
-                    <option value="02">02</option>
-                    <option value="03">03</option>
-                    <option value="04">04</option>
-                    <option value="05">05</option>
-                    <option value="06">06</option>
-                    <option value="01">07</option>
-                    <option value="02">08</option>
-                    <option value="03">09</option>
-                    <option value="04">10</option>
-                    <option value="05">11</option>
-                    <option value="06">12</option>
-                    <option value="01">13</option>
-                    <option value="02">14</option>
-                    <option value="03">15</option>
-                    <option value="04">16</option>
-                    <option value="05">17</option>
-                    <option value="06">18</option>
-                    <option value="01">19</option>
-                    <option value="02">20</option>
-                    <option value="03">21</option>
-                    <option value="04">22</option>
-                    <option value="05">23</option>
-                    <option value="06">24</option>
-                    <option value="02">25</option>
-                    <option value="03">26</option>
-                    <option value="04">27</option>
-                    <option value="05">28</option>
-                    <option value="06">29</option>
-                    <option value="05">30</option>
-                    <option value="06">31</option>
+                  <select className="form-select rounded-pill btng text-white border-0" id="day" onChange={handleDateChange('day')}>
+                    { nextDays(newReservation.date).map((day) => (
+                      <option
+                        key={`day-${day}`}
+                        value={day}
+                      >
+                        {day}
+                      </option>
+                    ))}
                   </select>
                 </div>
               </div>
@@ -111,5 +151,13 @@ function Reserve() {
     </header>
   );
 }
+
+Reserve.propTypes = {
+  serviceId: PropTypes.number,
+};
+
+Reserve.defaultProps = {
+  serviceId: -1,
+};
 
 export default Reserve;
