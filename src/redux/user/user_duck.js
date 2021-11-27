@@ -16,6 +16,14 @@ const logOut = (dispatch) => {
   })
 }
 
+const defaultState = {
+  user: {
+    username: '',
+    userId: -1,
+    messages: [],
+  }
+};
+
 const getUser = (username) => (dispatch) => {
   return axios.get(`${rootUrl}/api/v1/users`, { params: { name: username } })
     .then((response) => {
@@ -56,6 +64,7 @@ const postUser = (username) => async (dispatch) => {
       );
     }).catch((error) => {
       dispatch(
+
         {
           type: SIGNUP,
           userId: null,
@@ -65,7 +74,7 @@ const postUser = (username) => async (dispatch) => {
     });
 };
 
-const user = (state = {}, action) => {
+const user = (state = defaultState, action) => {
   switch (action.type) {
     case LOGIN:
       return {
@@ -85,7 +94,7 @@ const user = (state = {}, action) => {
         },
       };
     case LOGOUT:
-      return {};
+      return defaultState;
     default:
       return state;
   }
@@ -93,4 +102,3 @@ const user = (state = {}, action) => {
 
 export default user;
 export { getUser, postUser, logOut };
-

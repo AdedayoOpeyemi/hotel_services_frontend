@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { useDispatch, useSelector } from 'react-redux';
+import { useSelector } from 'react-redux';
 import PropTypes from 'prop-types';
 import videos from './assets/resort.mp4';
 import {
@@ -18,9 +18,8 @@ const findDefault = (serviceId, services) => {
 };
 
 function Reserve({ serviceId }) {
-  const user = useSelector((state) => state.user);
+  const user = useSelector((state) => state.user.user);
   const services = useSelector((state) => state.services.services);
-
   const [newReservation, setNewReservation] = useState({
     userId: user.userId,
     serviceId,
@@ -61,7 +60,7 @@ function Reserve({ serviceId }) {
             <div className="row my-3">
               <div className="col-md-6">
                 <div className="input-group mb-3">
-                  <input type="text" className="form-control rounded-pill border-0 text-center" value={user.userName} aria-label="Username" aria-describedby="basic-addon1" />
+                  <input type="text" className="form-control rounded-pill border-0 text-center" value={user.username} aria-label="Username" aria-describedby="basic-addon1" disabled/>
                 </div>
               </div>
               <div className="col-md-6">
