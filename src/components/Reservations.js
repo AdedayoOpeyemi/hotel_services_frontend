@@ -1,15 +1,25 @@
-import React from 'react';
-import { useSelector } from 'react-redux';
+import React, { useEffect } from 'react';
+import { useSelector, useDispatch } from 'react-redux';
+import { getReservationData } from '../redux/reservation/reservation_duck';
 
 function Reservations() {
-  const services = useSelector((state) => state.services);
+  const dispatch = useDispatch();
+  // const currentUser = useSelector((state) => state.user);
+
+  useEffect(() => {
+    dispatch(getReservationData(1));
+  }, []);
+
+  const reservations = useSelector((state) => state.reservations);
 
   return (
     <div className="pt-5">
       <h1 className="text-center mb-3">My Reservations</h1>
-      { services.services
-        && services.services.map(({
-          id, name, description, imageUrl, price,
+      { reservations
+        && reservations.map(({
+          id, date: { day, month, year },
+          service_name: serviceName,
+          service_description: serviceDescription, image_url: imageUrl, city,
         }) => (
           <div className="container" key={id}>
             <div className="card mb-3 border-0 bg-light">
@@ -19,15 +29,17 @@ function Reservations() {
                 </div>
                 <div className="col-md-8">
                   <div className="card-body text-center mt-lg-5">
-                    <h2 className="card-title mb-3">{name}</h2>
+                    <h2 className="card-title mb-3">{serviceName}</h2>
                     <ul className="list-group border-0 mb-5">
-                      <li className="list-group-item list-group-item-light border-0 listbg mt-lg-5">{description}</li>
-                      <li className="list-group-item list-group-item-dark border-0">
-                        $
-                        {price}
+                      <li className="list-group-item list-group-item-light border-0 listbg mt-lg-5">{serviceDescription}</li>
+                      <li className="list-group-item list-group-item-light border-0 listbg">
+                        {day}
+                        /
+                        {month}
+                        /
+                        {year}
                       </li>
-                      <li className="list-group-item list-group-item-light border-0 listbg">Service Date</li>
-                      <li className="list-group-item list-group-item-dark border-0"> Service city</li>
+                      <li className="list-group-item list-group-item-dark border-0">{city}</li>
                     </ul>
                     <button type="button" className="btn w-50 green text-white fw-bolder rounded-pill mt-lg-5" id={id}>Cancel Reservation</button>
                   </div>
