@@ -1,6 +1,6 @@
 import React, { useEffect } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
-import { getReservationData } from '../redux/reservation/reservation_duck';
+import { getReservationData, cancelReservationToApi } from '../redux/reservation/reservation_duck';
 
 function Reservations() {
   const dispatch = useDispatch();
@@ -17,7 +17,7 @@ function Reservations() {
       <h1 className="text-center mb-3">My Reservations</h1>
       { reservations
         && reservations.map(({
-          id, date: { day, month, year },
+          reservation_id: id, date: { day, month, year },
           service_name: serviceName,
           service_description: serviceDescription, image_url: imageUrl, city,
         }) => (
@@ -41,7 +41,14 @@ function Reservations() {
                       </li>
                       <li className="list-group-item list-group-item-dark border-0">{city}</li>
                     </ul>
-                    <button type="button" className="btn w-50 green text-white fw-bolder rounded-pill mt-lg-5" id={id}>Cancel Reservation</button>
+                    <button
+                      type="button"
+                      className="btn w-50 green text-white fw-bolder rounded-pill mt-lg-5"
+                      id={id}
+                      onClick={() => dispatch(cancelReservationToApi(id, 1))}
+                    >
+                      Cancel Reservation
+                    </button>
                   </div>
                 </div>
               </div>
