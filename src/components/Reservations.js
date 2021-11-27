@@ -4,10 +4,10 @@ import { getReservationData, cancelReservationToApi } from '../redux/reservation
 
 function Reservations() {
   const dispatch = useDispatch();
-  // const currentUser = useSelector((state) => state.user);
+  const currentUser = useSelector((state) => state.user.user);
 
   useEffect(() => {
-    dispatch(getReservationData(1));
+    dispatch(getReservationData(currentUser));
   }, []);
 
   const reservations = useSelector((state) => state.reservations);
@@ -45,7 +45,7 @@ function Reservations() {
                       type="button"
                       className="btn w-50 green text-white fw-bolder rounded-pill mt-lg-5"
                       id={id}
-                      onClick={() => dispatch(cancelReservationToApi(id, 1))}
+                      onClick={() => dispatch(cancelReservationToApi(id, currentUser))}
                     >
                       Cancel Reservation
                     </button>
