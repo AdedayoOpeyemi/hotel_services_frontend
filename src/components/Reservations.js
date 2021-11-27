@@ -4,7 +4,7 @@ import { getReservationData, cancelReservationToApi } from '../redux/reservation
 
 function Reservations() {
   const dispatch = useDispatch();
-  const currentUser = useSelector((state) => state.user.user);
+  const currentUser = useSelector((state) => state.user.user.userId);
 
   useEffect(() => {
     dispatch(getReservationData(currentUser));
