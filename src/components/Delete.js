@@ -15,7 +15,7 @@ function Delete() {
             <div className="card mb-3 border-0 bg-light">
               <div className="row g-0 ">
                 <div className="col-md-4">
-                  <img src={imageUrl} className="img-fluid rounded-start" alt="..." />
+                  <img src={imageUrl} className="img-fluid rounded-start w-100" alt="..." />
                 </div>
                 <div className="col-md-8">
                   <div className="card-body text-center mt-lg-5">
