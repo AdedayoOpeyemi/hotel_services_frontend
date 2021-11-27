@@ -1,6 +1,9 @@
 ![](https://img.shields.io/badge/Microverse-blueviolet)
 
-# Hotel Booking app Frontend
+# Hotel Booking app Front-end
+
+### Back-end API access on:
+    https://github.com/RokoVarano/hotel_services_backend
 
 > React Frontend of the project
 
@@ -8,7 +11,6 @@
 ![Services](./src/components/assets/services.png)
 ![Service](./src/components/assets/service.png)
 ![Reserve](./src/components/assets/reserve.png)
-![Add](./src/components/assets/add.png)
 ![Delete](./src/components/assets/delete.png)
 
 Additional description about the project and its features.
@@ -18,13 +20,14 @@ Additional description about the project and its features.
 - Javascript
 - React
 - Redux
-
-## Live Demo
-
-Coming soon
-
+- Bootstrap
 
 ### Installation
+**Follow the Back-end instructions available on:**
+```
+https://github.com/RokoVarano/hotel_services_backend
+```
+
 1. Clone the repo
    ```sh
    git clone git@github.com:AdedayoOpeyemi/hotel_services_frontend.git
@@ -33,14 +36,10 @@ Coming soon
    ```sh
    npm install
    ```
-   2. Start the server 
+   2. Start the server  
    ```sh
-   npm start
+   npm start 
    ```
-3. Back-end API access on:
-    ```
-    https://github.com/RokoVarano/hotel_services_backend
-    ```
 ### Prerequisites
 
 * No prerequisites needed for this project.
@@ -48,14 +47,12 @@ Coming soon
 ### Usage
 
 * Login or Sign up only with username.
-* In the Carousel select the service you want.
-* The selection will give more details about the project.
+* On the services page select the service that you want.
+* The selection will give more details on the service page about the selected one.
 * To add a service fill and submit the form.
-* To delete a service, click on the delete button. 
-
-
-### Deployment
-
+* To delete a service, click on the delete button.
+* On My Reservations page you will be able to see a list of all your reservations, and also be able to cancel any of them.
+* On the Reserve page you will be able to generate a new reservations for any service by filling up the date and the city of your choice. 
 
 ## Authors
 
