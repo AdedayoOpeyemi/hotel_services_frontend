@@ -16,7 +16,7 @@ const months = ['January', 'February', 'March', 'April', 'May', 'June',
   'December'].map((name, i) => [name, i + 1]);
 
 export const nextMonths = ({ year }) => {
-  if (year === today.year) return months.slice(today.month - 1);
+  if (year === today.year) return months.slice(today.month);
   return months;
 };
 
