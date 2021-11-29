@@ -11,7 +11,11 @@ function Services() {
   }, []);
 
   return (
-    <div className="container">
+    <div className="container-fluid">
+      <div className="row">
+        <div className="col-2">
+        </div>
+        <div className="col-10">
       <div className="row vh-100 justify-content-center align-items-center">
         <div className="row">
           <h1 className="text-center text-uppercase fw-bolder">
@@ -22,6 +26,8 @@ function Services() {
           </p>
           <p className="text-center fw-lighter text-muted">***************</p>
           <CarouselReact />
+        </div>
+      </div>
         </div>
       </div>
     </div>
