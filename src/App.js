@@ -22,19 +22,25 @@ function App() {
   }, []);
 
   return (
-    <div className="App">
+    <div className="App container-fluid">
       <BrowserRouter>
-        <Sidebar />
-        <Routes>
-          {['/', '/login'].map((path) => <Route exact path={path} element={<LoginForm />} key={path} />)}
-          <Route path="/signup" element={<Signup />} />
-          <Route path="/services" element={<Services />} />
-          <Route path="/services/:id" element={<Service />} />
-          <Route path="/reserve" element={<Reserve />} />
-          <Route path="/reservations" element={<Reservations />} />
-          <Route path="/newservice" element={<NewService />} />
-          <Route path="/delete" element={<Delete />} />
-        </Routes>
+        <div className="row">
+          <div className="col-md-3">
+            <Sidebar />
+          </div>
+          <div className="col-md-9">
+            <Routes className="col-md-9">
+              {['/', '/login'].map((path) => <Route exact path={path} element={<LoginForm />} key={path} />)}
+              <Route path="/signup" element={<Signup />} />
+              <Route path="/services" element={<Services />} />
+              <Route path="/services/:id" element={<Service />} />
+              <Route path="/reserve" element={<Reserve />} />
+              <Route path="/reservations" element={<Reservations />} />
+              <Route path="/newservice" element={<NewService />} />
+              <Route path="/delete" element={<Delete />} />
+            </Routes>
+          </div>
+        </div>
       </BrowserRouter>
     </div>
   );
