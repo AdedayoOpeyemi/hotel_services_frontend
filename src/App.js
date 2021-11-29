@@ -25,10 +25,10 @@ function App() {
     <div className="App container-fluid">
       <BrowserRouter>
         <div className="row">
-          <div className="col-md-3">
+          <div className="col-md-2">
             <Sidebar />
           </div>
-          <div className="col-md-9">
+          <div className="col-md-10">
             <Routes className="col-md-9">
               {['/', '/login'].map((path) => <Route exact path={path} element={<LoginForm />} key={path} />)}
               <Route path="/signup" element={<Signup />} />
