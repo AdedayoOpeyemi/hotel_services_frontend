@@ -93,6 +93,12 @@ function Reserve({ serviceId }) {
                   onChange={handleServiceChange}
                   defaultValue={findDefault(serviceId, services)}
                 >
+                  <option
+                    value={-1}
+                    disabled
+                  >
+                    Choose a service to reserve
+                  </option>
                   { services.map(({ id, name }) => (
                     <option
                       key={`service-${id}`}
@@ -101,11 +107,6 @@ function Reserve({ serviceId }) {
                       {name}
                     </option>
                   ))}
-                  <option
-                    value={-1}
-                  >
-                    Choose a service to reserve
-                  </option>
                 </select>
               </div>
             </div>
