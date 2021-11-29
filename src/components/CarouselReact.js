@@ -4,24 +4,25 @@ import Carousel from 'react-elastic-carousel';
 import { Link } from 'react-router-dom';
 
 function CarouselReact() {
-    const services = useSelector((state) => state.services);
-    const breakPoints = [
-        { width: 1, itemsToShow: 1 },
-        { width: 550, itemsToShow: 2, itemsToScroll: 2 },
-        { width: 768, itemsToShow: 3 },
-        { width: 1200, itemsToShow: 3 }
-      ];
+  const services = useSelector((state) => state.services);
+  const breakPoints = [
+    { width: 1, itemsToShow: 1 },
+    { width: 550, itemsToShow: 2, itemsToScroll: 2 },
+    { width: 768, itemsToShow: 3 },
+    { width: 1200, itemsToShow: 3 },
+  ];
 
-    return  (
-        <div className="carouselcont">
-          <div className="carousel-wrapper">
-            <Carousel breakPoints={breakPoints}>
-                    {services.services
+  return (
+    <div className="carouselcont">
+      <div className="carousel-wrapper">
+        <Carousel breakPoints={breakPoints}>
+          {services.services
         && services.services.map(({
           id, name, description, imageUrl,
         }, index) => (
           <div
-            key={id} className="w-100 mx-3"
+            key={id}
+            className="w-100 mx-3"
           >
             <Link to={`/services/${id}`}>
               <div className="card border-0">
@@ -34,20 +35,18 @@ function CarouselReact() {
               </div>
             </Link>
             <div className="text-center fs-3 row text-muted">
-            <div className="col">
-              <i className="fab fa-facebook" />
-              <i className="fab fa-twitter px-3" />
-              <i className="fab fa-instagram" />
+              <div className="col">
+                <i className="fab fa-facebook" />
+                <i className="fab fa-twitter px-3" />
+                <i className="fab fa-instagram" />
+              </div>
             </div>
           </div>
-          </div>
         ))}
-            </Carousel>
-          </div>
-        </div>
-      );
-  }
-
-
+        </Carousel>
+      </div>
+    </div>
+  );
+}
 
 export default CarouselReact;

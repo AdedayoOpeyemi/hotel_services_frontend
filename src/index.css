@@ -119,12 +119,14 @@ a:link {
   align-items: center;
 }
 
-button.rec-dot{
+button.rec-dot {
   background-color: #97c036;
   box-shadow: 0 0 1px 3px #97c036;
 }
 
-button.rec-dot:hover, button.rec-dot:active, button.rec-dot:focus  {
+button.rec-dot:hover,
+button.rec-dot:active,
+button.rec-dot:focus {
   box-shadow: 0 0 1px 3px #97c036;
 }
 
@@ -132,4 +134,3 @@ button.rec.rec-arrow:hover,
 button.rec.rec-arrow:focus {
   background-color: #97c036;
 }
-
