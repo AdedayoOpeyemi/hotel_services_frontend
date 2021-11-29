@@ -1,7 +1,7 @@
 import React, { useEffect } from 'react';
 import { useDispatch } from 'react-redux';
 import { getServices } from '../redux/service/service_duck';
-import Carousel from './Carousel';
+import CarouselReact from './CarouselReact';
 
 function Services() {
   const dispatch = useDispatch();
@@ -14,21 +14,14 @@ function Services() {
     <div className="container">
       <div className="row vh-100 justify-content-center align-items-center">
         <div className="row">
-          <h1 className="text-center fw-bolder">
+          <h1 className="text-center text-uppercase fw-bolder">
             All Services
           </h1>
-          <p className="fw-lighter text-center mb-3 text-muted">
+          <p className="fw-lighter text-center mb-3 text-muted fw-bold">
             Please select a Service
           </p>
           <p className="text-center fw-lighter text-muted">***************</p>
-          <Carousel />
-          <div className="text-center fs-3 row">
-            <div className="col">
-              <i className="fab fa-facebook" />
-              <i className="fab fa-twitter px-3" />
-              <i className="fab fa-instagram" />
-            </div>
-          </div>
+          <CarouselReact />
         </div>
       </div>
     </div>
