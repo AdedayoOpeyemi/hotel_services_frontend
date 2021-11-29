@@ -19,7 +19,7 @@ function CarouselReact() {
           {services.services
         && services.services.map(({
           id, name, description, imageUrl,
-        }, index) => (
+        }) => (
           <div
             key={id}
             className="w-100 mx-3"
