@@ -136,7 +136,7 @@ button.rec.rec-arrow:focus {
 }
 
 .sidemw {
-  width: 200px!important;
+  width: 200px !important;
   height: 100vh;
   background-color: red;
 }
