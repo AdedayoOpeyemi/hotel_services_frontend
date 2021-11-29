@@ -103,5 +103,8 @@ a:link {
 }
 
 .go-back {
-  width: 50px;
+  width: 100px;
+  margin-top: 40px;
+  border-radius: 0 50% 50% 0!important;
+  padding: 20px!important;
 }

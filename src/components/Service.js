@@ -15,7 +15,8 @@ const Service = () => {
         <div className="card mb-3 border-0">
           <div className="row g-0">
             <div className="col-md-8 d-flex flex-column">
-              <img src={service.imageUrl} className="img-fluid w-60 mx-auto" alt="..." />
+              <img src={service.imageUrl} className="img-fluid w-50 mx-auto" alt="..." />
+              <button type="button" className="btn btn-light green text-white fw-bolder go-back mt-auto">B</button>
             </div>
             <div className="col-md-4">
               <div className="card-body px-5">
@@ -32,7 +33,6 @@ const Service = () => {
             </div>
           </div>
         </div>
-        <button type="button" className="btn btn-light green text-white fw-bolder go-back mb-3">B</button>
       </div>
     </div>
   );
