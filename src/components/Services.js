@@ -17,9 +17,10 @@ function Services() {
           <h1 className="text-center fw-bolder">
             All Services
           </h1>
-          <p className="fw-lighter text-center">
+          <p className="fw-lighter text-center mb-3 text-muted">
             Please select a Service
           </p>
+          <p className="text-center fw-lighter text-muted">***************</p>
           <Carousel />
           <div className="text-center fs-3 row">
             <div className="col">
