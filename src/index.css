@@ -134,3 +134,9 @@ button.rec.rec-arrow:hover,
 button.rec.rec-arrow:focus {
   background-color: #97c036;
 }
+
+.sidemw {
+  width: 200px!important;
+  height: 100vh;
+  background-color: red;
+}
