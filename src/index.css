@@ -97,3 +97,11 @@ i:hover {
 a:link {
   text-decoration: none;
 }
+
+.w-60 {
+  width: 60%;
+}
+
+.go-back {
+  width: 50px;
+}

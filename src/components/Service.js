@@ -10,14 +10,14 @@ const Service = () => {
   if (service === undefined) return <Navigate to="/services" />;
 
   return (
-    <div className="container">
+    <div className="container-fluid">
       <div className="row vh-100 justify-content-center align-items-center">
         <div className="card mb-3 border-0">
           <div className="row g-0">
-            <div className="col-md-5">
-              <img src={service.imageUrl} className="img-fluid w-100" alt="..." />
+            <div className="col-md-8 d-flex flex-column">
+              <img src={service.imageUrl} className="img-fluid w-60 mx-auto" alt="..." />
             </div>
-            <div className="col-md-7">
+            <div className="col-md-4">
               <div className="card-body px-5">
                 <h2 className="card-title text-center mb-lg-5">{service.name}</h2>
                 <ul className="list-group border-0 mb-5">
@@ -32,8 +32,8 @@ const Service = () => {
             </div>
           </div>
         </div>
+        <button type="button" className="btn btn-light green text-white fw-bolder go-back mb-3">B</button>
       </div>
-
     </div>
   );
 };
