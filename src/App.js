@@ -25,7 +25,7 @@ function App() {
     <div className="App container-fluid">
       <BrowserRouter>
         <div className="row">
-          <div className="col-md-2">
+          <div className="col-md-2 left-side">
             <Sidebar />
           </div>
           <div className="col-md-10">
