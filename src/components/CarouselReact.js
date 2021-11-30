@@ -29,7 +29,7 @@ function CarouselReact() {
                 <img src={imageUrl} className="img-fluid imgcont" alt="..." />
                 <div className="card-body text-center">
                   <h5 className="card-title text-center text-dark text-uppercase fw-bolder">{name}</h5>
-                  <p className="card-text text-dark text-muted">{description}</p>
+                  <p className="card-text text-dark text-muted text-break">{description}</p>
                   <p className="text-center fw-lighter text-muted">***************</p>
                 </div>
               </div>

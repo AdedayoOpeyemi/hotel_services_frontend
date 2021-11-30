@@ -12,9 +12,9 @@ function Services() {
 
   return (
     <div className="container-fluid">
-      <div className="row ms-sm-5 ps-sm-5">
+      <div className="row ms-sm-5 ps-sm-5 pt-5">
 
-        <div className="row vh-100 justify-content-center align-items-center px-sm-5 ms-sm-5">
+        <div className="row justify-content-center align-items-center px-sm-5 ms-sm-5 pt-5">
           <div className="row">
             <h1 className="text-center text-uppercase fw-bolder">
               All Services
