@@ -24,11 +24,9 @@ function App() {
   return (
     <div className="App container-fluid">
       <BrowserRouter>
+        <Sidebar />
         <div className="row">
-          <div className="col-md-2 left-side">
-            <Sidebar />
-          </div>
-          <div className="col-md-10">
+          <div className="col-md-12 main-side">
             <Routes className="col-md-9">
               {['/', '/login'].map((path) => <Route exact path={path} element={<LoginForm />} key={path} />)}
               <Route path="/signup" element={<Signup />} />
