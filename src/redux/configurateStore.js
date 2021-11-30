@@ -14,4 +14,10 @@ const reducer = combineReducers({
 const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;
 const store = createStore(reducer, composeEnhancers(applyMiddleware(thunk)));
 
+const testStore = (initialState) => {
+  const createStoreWithMiddleWare = applyMiddleware(thunk)(createStore);
+  return createStoreWithMiddleWare(reducer, initialState);
+};
+
 export default store;
+export { reducer, testStore };
