@@ -25,7 +25,7 @@ const defaultState = {
 const store = testStore(defaultState);
 
 test('DEFAULT: should return the default state', () => {
-  expect(user(undefined, { action: 'NON_EXISTANT' })).toBe(defaultState);
+  expect(user(undefined, { type: 'NON_EXISTANT' })).toStrictEqual(defaultState);
 });
 
 test('GET: should set a user with name, userId, and the login message', () => {

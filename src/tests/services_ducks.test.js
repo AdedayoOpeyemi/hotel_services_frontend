@@ -45,7 +45,7 @@ const servicesGetResponse = { services: [serviceA, serviceB] };
 mock.onGet(`${rootUrl}/api/v1/services`).reply(200, servicesGetResponse);
 
 test('DEFAULT: return initial state', () => {
-  expect(services(undefined, { type: 'NON_EXISTANT' })).toBe(initialState);
+  expect(services(undefined, { type: 'NON_EXISTANT' })).toStrictEqual(initialState);
 });
 
 test('GET: should return a list of services', () => {
