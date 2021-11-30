@@ -1,8 +1,14 @@
-import React from 'react';
-import { useSelector } from 'react-redux';
+import React, { useEffect } from 'react';
+import { useSelector, useDispatch } from 'react-redux';
+import { cancelServiceToApi, getServices } from '../redux/service/service_duck';
 
 function Delete() {
+  const dispatch = useDispatch();
   const services = useSelector((state) => state.services);
+
+  useEffect(() => {
+    dispatch(getServices());
+  }, []);
 
   return (
     <div className="pt-5">
@@ -27,7 +33,14 @@ function Delete() {
                         {price}
                       </li>
                     </ul>
-                    <button type="button" className="btn w-50 green text-white fw-bolder rounded-pill mt-lg-5" id={id}>Delete Service</button>
+                    <button
+                      type="button"
+                      className="btn w-50 green text-white fw-bolder rounded-pill mt-lg-5"
+                      id={id}
+                      onClick={() => dispatch(cancelServiceToApi(id))}
+                    >
+                      Delete Service
+                    </button>
                   </div>
                 </div>
               </div>
