@@ -33,11 +33,11 @@ function Delete() {
                         {price}
                       </li>
                     </ul>
-                    <button 
-                    type="button" 
-                    className="btn w-50 green text-white fw-bolder rounded-pill mt-lg-5" 
-                    id={id}
-                    onClick={() => dispatch(cancelServiceToApi(id))}
+                    <button
+                      type="button"
+                      className="btn w-50 green text-white fw-bolder rounded-pill mt-lg-5"
+                      id={id}
+                      onClick={() => dispatch(cancelServiceToApi(id))}
                     >
                       Delete Service
                     </button>

@@ -4,7 +4,7 @@ const POST_SERVICE = 'POST_SERVICE';
 const MISSING_FIELDS = 'MISSING_FIELDS';
 const GET_SERVICES = 'GET_SERVICES';
 const API_FAILURE = 'API_FAILURE';
-const CANCEL_SERVICE = 'CANCEL_SERVICE'
+const CANCEL_SERVICE = 'CANCEL_SERVICE';
 
 const port = '3000';
 const rootUrl = `http://localhost:${port}`;
@@ -115,6 +115,7 @@ const services = (state = initialState, action) => {
   }
 };
 
-
 export default services;
-export { postService, defaultService, getServices, cancelServiceToApi };
+export {
+  postService, defaultService, getServices, cancelServiceToApi,
+};
