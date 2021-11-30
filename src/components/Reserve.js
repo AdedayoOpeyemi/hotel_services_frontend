@@ -89,6 +89,7 @@ function Reserve({ serviceId }) {
         <div className="row vh-100 justify-content-center align-items-center">
           <div className="row">
             <h1 className="text-center">New Reservation</h1>
+            <p className="text-center mb-3">Our hotels have best-in-class services. Pick an individual service for a luxurious stay or a social service to stand out.</p>
             <div className="row my-3">
               <div className="col-md-6">
                 <div className="input-group mb-3">
