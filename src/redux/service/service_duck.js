@@ -4,6 +4,7 @@ const POST_SERVICE = 'POST_SERVICE';
 const MISSING_FIELDS = 'MISSING_FIELDS';
 const GET_SERVICES = 'GET_SERVICES';
 const API_FAILURE = 'API_FAILURE';
+const CANCEL_SERVICE = 'CANCEL_SERVICE';
 
 const port = '3000';
 const rootUrl = `http://localhost:${port}`;
@@ -76,6 +77,21 @@ const postService = ({
   return 'New Service Posted';
 };
 
+const cancelService = () => ({
+  type: CANCEL_SERVICE,
+});
+
+const cancelServiceToApi = (serviceId) => async (dispatch) => {
+  dispatch(cancelService());
+  const response = await axios({
+    method: 'delete',
+    url: `${rootUrl}/api/v1/services/${serviceId}`,
+  });
+  if (response.status === 202) {
+    dispatch(getServices());
+  }
+};
+
 const services = (state = initialState, action) => {
   switch (action.type) {
     case GET_SERVICES:
@@ -92,10 +108,14 @@ const services = (state = initialState, action) => {
         ...state,
         errors: action.messages,
       };
+    case CANCEL_SERVICE:
+      return state;
     default:
       return state;
   }
 };
 
 export default services;
-export { postService, defaultService, getServices };
+export {
+  postService, defaultService, getServices, cancelServiceToApi,
+};
