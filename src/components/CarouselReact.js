@@ -28,13 +28,13 @@ function CarouselReact() {
               <div className="card border-0">
                 <img src={imageUrl} className="img-fluid imgcont" alt="..." />
                 <div className="card-body text-center">
-                  <h5 className="card-title text-center text-dark text-uppercase fw-bolder">{name}</h5>
-                  <p className="card-text text-dark text-muted text-break">{description}</p>
-                  <p className="text-center fw-lighter text-muted">***************</p>
+                  <h5 className="card-title text-center text-dark text-uppercase fw-bolder tittle fs-3">{name}</h5>
+                  <p className="text-center fw-lighter grey">***************</p>
+                  <p className="card-text grey text-break">{description}</p>
                 </div>
               </div>
             </Link>
-            <div className="text-center fs-3 row text-muted">
+            <div className="text-center fs-3 row grey">
               <div className="col">
                 <i className="fab fa-facebook" />
                 <i className="fab fa-twitter px-3" />

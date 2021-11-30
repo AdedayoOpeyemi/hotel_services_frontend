@@ -140,3 +140,12 @@ button.rec.rec-arrow:focus {
   height: 100vh;
   background-color: red;
 }
+
+.tittle {
+  font-family: 'Bebas Neue', cursive;
+  font-size: 60px;
+}
+
+.grey {
+  color: #B2B2B2!important;
+}

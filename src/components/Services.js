@@ -16,13 +16,13 @@ function Services() {
 
         <div className="row justify-content-center align-items-center px-sm-5 ms-sm-5 pt-5">
           <div className="row">
-            <h1 className="text-center text-uppercase fw-bolder">
+            <h1 className="text-center text-uppercase fw-bolder tittle">
               All Services
             </h1>
-            <p className="fw-lighter text-center mb-3 text-muted fw-bold">
+            <p className="fw-lighter text-center mb-3 fw-bold grey">
               Please select a Service
             </p>
-            <p className="text-center fw-lighter text-muted">***************</p>
+            <p className="text-center fw-lighter grey">***************</p>
             <CarouselReact />
           </div>
         </div>
