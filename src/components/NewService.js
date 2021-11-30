@@ -3,7 +3,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import { useNavigate } from 'react-router-dom';
 import { useValidateImageURL } from 'use-validate-image-url';
 import { postService } from '../redux/service/service_duck';
-import videos from './assets/box.mp4';
+import backgroundImage from './assets/new-service-background.jpg';
 import isServiceValid from '../utils/serviceValidation';
 import ValidationError from './ValidationError';
 
@@ -53,9 +53,7 @@ function NewService() {
 
   return (
     <header>
-      <video autoPlay="autoplay" loop="loop" muted>
-        <source src={videos} type="video/mp4" />
-      </video>
+      <img src={backgroundImage} alt="..." />
       <div className="container text-white px-5">
         <div className="row vh-100 justify-content-center align-items-center">
           <div className="row">

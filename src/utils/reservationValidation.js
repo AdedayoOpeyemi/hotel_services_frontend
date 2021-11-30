@@ -2,8 +2,8 @@ import moment from 'moment';
 import { today } from './dates';
 
 const isPast = ({ year, month, day }) => {
-  const inputDate = moment([year, month - 1, day]);
-  const todayDate = moment([today.year, today.month, today.day]);
+  const inputDate = moment([year, month, day]);
+  const todayDate = moment([today.year, today.month + 1, today.day]);
   return inputDate.diff(todayDate, 'days') < 0;
 };
 
@@ -12,11 +12,12 @@ const isReservationValid = ({ serviceId, date, city }, services = []) => {
     valid: true,
     service: '',
     date: '',
+    city: '',
   };
 
   if (!city) {
     validation.valid = false;
-    validation.date = 'Please, select a city';
+    validation.city = 'Please, select a city';
   }
 
   if (!moment([date.year, date.month - 1, date.day]).isValid()) {
@@ -33,7 +34,7 @@ const isReservationValid = ({ serviceId, date, city }, services = []) => {
 
   if (!services.some((service) => service.id === serviceId)) {
     validation.valid = false;
-    validation.date = 'Please, select a service to reserve';
+    validation.service = 'Please, select a service to reserve';
   }
 
   return validation;
