@@ -1,6 +1,7 @@
 import React from 'react';
 import { Navigate, useParams } from 'react-router-dom';
 import { useSelector } from 'react-redux';
+import { BiLeftArrow } from "react-icons/bi";
 
 const Service = () => {
   const { id } = useParams();
@@ -16,7 +17,7 @@ const Service = () => {
           <div className="row g-0">
             <div className="col-md-8 d-flex flex-column">
               <img src={service.imageUrl} className="img-fluid w-50 mx-auto" alt="..." />
-              <button type="button" className="btn btn-light green text-white fw-bolder go-back mt-auto">B</button>
+              <button type="button" className="btn btn-light green text-white fw-bolder go-back mt-auto"><BiLeftArrow className="imported-icon" /></button>
             </div>
             <div className="col-md-4">
               <div className="card-body px-5">
