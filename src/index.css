@@ -97,3 +97,19 @@ i:hover {
 a:link {
   text-decoration: none;
 }
+
+.w-60 {
+  width: 60%;
+}
+
+.go-back {
+  width: 100px;
+  margin-top: 40px;
+  border-radius: 0 50% 50% 0 !important;
+  padding: 20px !important;
+  margin-left: -36px;
+}
+
+.left-side {
+  border-right: rgba(0, 0, 0, 0.103) 1px solid;
+}
