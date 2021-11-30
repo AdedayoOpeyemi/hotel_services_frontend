@@ -14,13 +14,18 @@ const rootUrl = `http://localhost:${port}`;
 
 const defaultState = [];
 
-const store = testStore(defaultState);
+let store = testStore(defaultState);
+
+beforeEach(() => {
+  mock.reset();
+  store = testStore(defaultState);
+});
 
 test('DEFAULT: it should return the default state', () => {
   expect(reservations(undefined, { type: 'NON_EXISTANT' })).toStrictEqual(defaultState);
 });
 
-test('GET: it should return reservation data', () => {
+test('GET: it should return reservation data', async () => {
   const userId = '1';
 
   const reservationData = {
@@ -42,7 +47,7 @@ test('GET: it should return reservation data', () => {
   };
   mock.onGet(`${rootUrl}/api/v1/users/${userId}/reservations`).reply(200, reservationData);
 
-  store.dispatch(getReservationData(userId)).then(() => {
-    expect(store.getState().reservations).toBe(reservationData);
+  await store.dispatch(getReservationData(userId)).then(() => {
+    expect(store.getState()).toBe(reservationData);
   });
 });

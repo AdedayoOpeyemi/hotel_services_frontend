@@ -17,7 +17,7 @@ const initialState = {
   errors: null,
 };
 
-const store = testStore({ user: {}, services: [], reservations: [] });
+let store = testStore(initialState);
 
 // const errors = (messages) => ({
 //   type: API_FAILURE,
@@ -42,26 +42,45 @@ const serviceB = {
 
 const servicesGetResponse = { services: [serviceA, serviceB] };
 
-mock.onGet(`${rootUrl}/api/v1/services`).reply(200, servicesGetResponse);
+beforeEach(() => {
+  mock.reset();
+  store = testStore(initialState);
+});
 
 test('DEFAULT: return initial state', () => {
   expect(services(undefined, { type: 'NON_EXISTANT' })).toStrictEqual(initialState);
 });
 
-test('GET: should return a list of services', () => {
+test('GET: should return a list of services', async () => {
   mock.onGet(`${rootUrl}/api/v1/services`).reply(200, servicesGetResponse);
 
-  store.dispatch(getServices()).then(() => {
-    expect(store.getState().services).toBe([serviceA, serviceB]);
+  await store.dispatch(getServices()).then(() => {
+    expect(store.getState().services).toStrictEqual({
+      services: [{
+        id: 1,
+        name: 'pool time',
+        description: 'bring your own towel',
+        price: 1000,
+        imageUrl: 'https://picsum.photos/200/300',
+
+      },
+      {
+        id: 2,
+        name: 'jungle tour',
+        description: 'bug spray included',
+        price: 50,
+        imageUrl: 'https://picsum.photos/200/300',
+      }],
+    });
   });
 });
 
-test('POST: should return a response with no error', () => {
+test('POST: should return a response with no error', async () => {
   mock.onPost(`${rootUrl}/api/v1/services`).reply(201, {
     messsage: 'Service has been created',
   });
 
-  store.dispatch(postService({
+  await store.dispatch(postService({
     name: serviceA.name,
     description: serviceA.description,
     price: serviceA.price,
@@ -71,12 +90,12 @@ test('POST: should return a response with no error', () => {
   });
 });
 
-test('POST: should return Missing fields message', () => {
+test('POST: should return Missing fields message', async () => {
   mock.onPost(`${rootUrl}/api/v1/services`).reply(201, {
     messsage: 'Service has been created',
   });
 
-  store.dispatch(postService({
+  await store.dispatch(postService({
     name: serviceA.name,
     description: '',
     price: serviceA.price,
