@@ -11,7 +11,7 @@ function Services() {
   }, []);
 
   return (
-    <div className="container-fluid">
+    <div className="container-fluid ps-sm-5">
       <div className="row ms-sm-5 ps-sm-5 pt-5">
 
         <div className="row justify-content-center align-items-center px-sm-5 ms-sm-5 pt-5">
