@@ -11,8 +11,8 @@ import NewService from './components/NewService';
 import Delete from './components/Delete';
 import Service from './components/Service';
 import { defaultService } from './redux/service/service_duck';
+import MainPage from './components/MainPage';
 import Signup from './components/Signup';
-import Sidebar from './components/Sidebar';
 
 function App() {
   const dispatch = useDispatch();
@@ -22,18 +22,35 @@ function App() {
   }, []);
 
   return (
-    <div className="App">
+    <div className="App container-fluid p-0">
       <BrowserRouter>
-        <Sidebar />
-        <Routes>
+        <Routes className="col-md-9">
           {['/', '/login'].map((path) => <Route exact path={path} element={<LoginForm />} key={path} />)}
           <Route path="/signup" element={<Signup />} />
-          <Route path="/services" element={<Services />} />
-          <Route path="/services/:id" element={<Service />} />
-          <Route path="/reserve" element={<Reserve />} />
-          <Route path="/reservations" element={<Reservations />} />
-          <Route path="/newservice" element={<NewService />} />
-          <Route path="/delete" element={<Delete />} />
+          <Route
+            path="/services"
+            element={(<MainPage type="content"><Services /></MainPage>)}
+          />
+          <Route
+            path="/services/:id"
+            element={(<MainPage type="content"><Service /></MainPage>)}
+          />
+          <Route
+            path="/reserve"
+            element={(<MainPage type="form"><Reserve /></MainPage>)}
+          />
+          <Route
+            path="/reservations"
+            element={(<MainPage type="content"><Reservations /></MainPage>)}
+          />
+          <Route
+            path="/newservice"
+            element={(<MainPage type="form"><NewService /></MainPage>)}
+          />
+          <Route
+            path="/delete"
+            element={(<MainPage type="content"><Delete /></MainPage>)}
+          />
         </Routes>
       </BrowserRouter>
     </div>

@@ -5,7 +5,7 @@
 }
 
 .imgcont {
-  max-height: 300px;
+  max-height: 250px;
 }
 
 .green {
@@ -45,14 +45,43 @@ header video {
   transform: translateX(-50%) translateY(-50%);
 }
 
+main {
+  max-height: 100vh;
+  overflow-y: scroll;
+}
+
+header img {
+  opacity: 0.2;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: 1;
+  -ms-transform: translateX(-50%) translateY(-50%);
+  -moz-transform: translateX(-50%) translateY(-50%);
+  -webkit-transform: translateX(-50%) translateY(-50%);
+  transform: translateX(-50%) translateY(-50%);
+}
+
 header .container {
   position: relative;
   z-index: 2;
 }
 
 .sidebarcont {
-  z-index: 99;
-  position: absolute;
+  position: fixed;
+  width: 100%;
+  max-width: 250px;
+  z-index: 10;
+  border-right: 1px solid #efefef;
+}
+
+@media (min-width: 576px) {
+  .sidebarcont {
+    position: relative;
+  }
 }
 
 .nav-link:active,
@@ -67,14 +96,6 @@ i:hover {
   color: #97c036;
 }
 
-.nav-menu {
-  display: flex;
-  position: fixed;
-  top: 0;
-  left: -130%;
-  transition: 850ms;
-}
-
 .nav-menu.active {
   left: 0;
   width: 200px;
@@ -82,8 +103,10 @@ i:hover {
 }
 
 .menubtn {
-  z-index: 0;
   position: fixed;
+  top: 10px;
+  left: 10px;
+  z-index: 20;
 }
 
 .sidebarbg {
@@ -96,4 +119,72 @@ i:hover {
 
 a:link {
   text-decoration: none;
+}
+
+.carouselcont {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.controls-wrapper {
+  width: 100%;
+}
+
+.carousel-wrapper {
+  width: 100%;
+}
+
+.cardcont {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+button.rec-dot {
+  background-color: #97c036;
+  box-shadow: 0 0 1px 3px #97c036;
+}
+
+button.rec-dot:hover,
+button.rec-dot:active,
+button.rec-dot:focus {
+  box-shadow: 0 0 1px 3px #97c036;
+}
+
+button.rec.rec-arrow:hover,
+button.rec.rec-arrow:focus {
+  background-color: #97c036;
+}
+
+.sidemw {
+  width: 200px !important;
+  height: 100vh;
+  background-color: red;
+}
+
+.tittle {
+  font-family: 'Bebas Neue', cursive;
+  font-size: 50px;
+}
+
+.grey {
+  color: #b2b2b2 !important;
+}
+
+.w-60 {
+  width: 60%;
+}
+
+.go-back {
+  width: 100px;
+  margin-top: 40px;
+  border-radius: 0 50% 50% 0 !important;
+  padding: 20px !important;
+  margin-left: -36px;
+}
+
+.left-side {
+  border-right: rgba(0, 0, 0, 0.103) 1px solid;
 }

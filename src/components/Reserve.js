@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import PropTypes from 'prop-types';
 import { useNavigate } from 'react-router-dom';
-import videos from './assets/resort.mp4';
+import backgroundImage from './assets/new-reservation-background.jpg';
 import {
   today,
   nextYears,
@@ -10,7 +10,7 @@ import {
   nextDays,
 } from '../utils/dates';
 import isReservationValid from '../utils/reservationValidation';
-
+import ValidationError from './ValidationError';
 import { postReservationToApi } from '../redux/reservation/reservation_duck';
 
 const yearsToDisplay = 5;
@@ -31,7 +31,17 @@ function Reserve({ serviceId }) {
     userId: user.userId,
     serviceId,
     city: '',
-    date: today,
+    date: {
+      ...today,
+      month: today.month + 1,
+    },
+  });
+
+  const [validation, setValidation] = useState({
+    valid: false,
+    service: '',
+    date: '',
+    city: '',
   });
 
   const handleCityChange = (e) => {
@@ -64,6 +74,7 @@ function Reserve({ serviceId }) {
 
   const postNewReservation = () => {
     const newValidation = isReservationValid(newReservation, services);
+    setValidation(newValidation);
     if (newValidation.valid) {
       dispatch(postReservationToApi(newReservation)).then(() => {
         navigate('/reservations');
@@ -73,13 +84,12 @@ function Reserve({ serviceId }) {
 
   return (
     <header>
-      <video autoPlay="autoplay" loop="loop" muted>
-        <source src={videos} type="video/mp4" />
-      </video>
+      <img src={backgroundImage} alt="..." />
       <div className="container text-white">
         <div className="row vh-100 justify-content-center align-items-center">
           <div className="row">
             <h1 className="text-center">New Reservation</h1>
+            <p className="text-center mb-3">Our hotels have best-in-class services. Pick an individual service for a luxurious stay or a social service to stand out.</p>
             <div className="row my-3">
               <div className="col-md-6">
                 <div className="input-group mb-3">
@@ -108,6 +118,8 @@ function Reserve({ serviceId }) {
                     </option>
                   ))}
                 </select>
+                {validation.service
+                 && <ValidationError errorMessage={validation.service} />}
               </div>
             </div>
             <div className="row">
@@ -123,6 +135,8 @@ function Reserve({ serviceId }) {
                       </option>
                     ))}
                   </select>
+                  {validation.date
+                   && <ValidationError errorMessage={validation.date} />}
                 </div>
               </div>
               <div className="col-md-3 ">
@@ -167,6 +181,8 @@ function Reserve({ serviceId }) {
                         </option>
                     ))}
                   </select>
+                  {validation.city
+                   && <ValidationError errorMessage={validation.city} />}
                 </div>
               </div>
               <div className="col-md-2">
