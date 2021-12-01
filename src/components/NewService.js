@@ -7,12 +7,17 @@ import backgroundImage from './assets/new-service-background.jpg';
 import isServiceValid from '../utils/serviceValidation';
 import ValidationError from './ValidationError';
 
+const randomImageUrl = () => {
+  const rand = Math.round(Math.random() * 1000) + 1;
+  return `https://picsum.photos/id/${rand}/500`;
+}
+
 function NewService() {
   const [newService, setNewService] = useState({
     name: '',
     description: '',
     price: '',
-    imageUrl: "https://picsum.photos/id/{}/500",
+    imageUrl: 'https://picsum.photos/id/237/500',
   });
 
   const [validation, setValidation] = useState({
@@ -35,6 +40,7 @@ function NewService() {
 
   const dispatch = useDispatch();
   const dispatchService = () => {
+
     const newValidation = isServiceValid({
       ...newService,
       imageUrlStatus,
@@ -43,6 +49,7 @@ function NewService() {
     if (newValidation.valid) {
       const serviceToPost = {
         ...newService,
+        imageUrl: randomImageUrl(),
         price: Math.round(newService.price * 100),
       };
       dispatch(postService(serviceToPost)).then(() => {
