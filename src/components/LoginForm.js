@@ -21,9 +21,9 @@ const LoginForm = () => {
   }, []);
 
   const toServices = (input) => {
-    if (input === ('' || null || undefined)) return;
-
-    dispatch(getUser(input)).then(() => navigate('/services'));
+    dispatch(getUser(input)).then(() => {if (localStorage.getItem('current_user')) {
+      navigate('/services');
+    }});
   };
 
   return (
