@@ -12,7 +12,7 @@ function NewService() {
     name: '',
     description: '',
     price: '',
-    imageUrl: '',
+    imageUrl: "https://picsum.photos/id/{}/500",
   });
 
   const [validation, setValidation] = useState({
@@ -94,7 +94,7 @@ function NewService() {
               <div className="mb-3">
                 <div className="input-group">
                   <div className="input-group-prepend" />
-                  <input type="text" className="form-control text-center rounded-pill mb-3" placeholder="Service image URL" aria-label="Service_image" aria-describedby="basic-addon1" onChange={handleTextChange('imageUrl')} />
+                  <input type="text" className="form-control text-center rounded-pill mb-3 d-none" placeholder="Service image URL" aria-label="Service_image" aria-describedby="basic-addon1" onChange={handleTextChange('imageUrl')} value={newService.imageUrl} />
                 </div>
                 {validation.imageUrl
                  && <ValidationError errorMessage={validation.imageUrl} />}

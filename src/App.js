@@ -1,4 +1,4 @@
-import { useDispatch } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 import React, { useEffect } from 'react';
 import {
   BrowserRouter, Routes, Route,
@@ -20,6 +20,8 @@ function App() {
   useEffect(() => {
     dispatch(defaultService);
   }, []);
+
+  const user = useSelector((state) => state.user.user.userId);  
 
   return (
     <div className="App container-fluid p-0">
