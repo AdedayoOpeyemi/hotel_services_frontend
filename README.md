@@ -36,9 +36,9 @@ https://github.com/RokoVarano/hotel_services_backend
    ```sh
    npm install
    ```
-   2. Start the server  
+   2. Start the server
    ```sh
-   npm start 
+   npm start
    ```
 ### Prerequisites
 
@@ -52,7 +52,7 @@ https://github.com/RokoVarano/hotel_services_backend
 * To add a service fill and submit the form.
 * To delete a service, click on the delete button.
 * On My Reservations page you will be able to see a list of all your reservations, and also be able to cancel any of them.
-* On the Reserve page you will be able to generate a new reservations for any service by filling up the date and the city of your choice. 
+* On the Reserve page you will be able to generate a new reservations for any service by filling up the date and the city of your choice.
 
 ## Authors
 
@@ -92,6 +92,9 @@ Give a ⭐️ if you like this project!
 ## Acknowledgments
 
 - Special thanks to [Murat Korkmaz](https://www.behance.net/muratk) for allowing us to use his [Vespa Design](https://www.behance.net/gallery/26425031/Vespa-Responsive-Redesign)
+- New Reservation Photo by <a href="https://unsplash.com/@danedeaner?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Dane Deaner</a> on <a href="https://unsplash.com/s/photos/conference-room?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Unsplash</a>
+- New Service Photo by <a href="https://unsplash.com/@quinguyen?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Q.U.I</a> on <a href="https://unsplash.com/s/photos/hotel?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Unsplash</a>
+
 
 ## 📝 License
 

@@ -22,7 +22,7 @@ export const nextMonths = ({ year }) => {
 
 export const nextDays = ({ year, month }) => {
   const daysInMonth = new Date(year, month, 0).getDate();
-  if (year === today.year && month === today.month) {
+  if (year === today.year && (month - 1) === today.month) {
     return range(today.day, daysInMonth);
   }
   return range(1, daysInMonth);
