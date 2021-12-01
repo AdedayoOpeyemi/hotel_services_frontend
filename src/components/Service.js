@@ -26,7 +26,7 @@ const Service = () => {
             <div className="col-md-8 d-flex flex-column">
               <img src={service.imageUrl} className="img-fluid w-50 mx-auto" alt="..." />
               <button type="button" className="btn btn-light green text-white fw-bolder go-back mt-auto" aria-label="switch">
-                <Link to='/services'><BiLeftArrow className="imported-icon text-white" /></Link>
+                <Link to="/services"><BiLeftArrow className="imported-icon text-white" /></Link>
               </button>
             </div>
             <div className="col-md-4">
