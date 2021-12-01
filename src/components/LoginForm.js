@@ -21,9 +21,11 @@ const LoginForm = () => {
   }, []);
 
   const toServices = (input) => {
-    dispatch(getUser(input)).then(() => {if (localStorage.getItem('current_user')) {
-      navigate('/services');
-    }});
+    dispatch(getUser(input)).then(() => {
+      if (localStorage.getItem('current_user')) {
+        navigate('/services');
+      }
+    });
   };
 
   return (
