@@ -4,6 +4,7 @@ import user, {
   getUser, postUser,
 } from '../redux/user/user_duck';
 import { testStore } from '../redux/configurateStore';
+import './LocalStorageMock';
 
 const mock = new MockAdapter(axios);
 
@@ -12,9 +13,11 @@ const rootUrl = `http://localhost:${port}`;
 
 const defaultState = {
   user: {
-    username: '',
-    userId: -1,
-    messages: [],
+    user: {
+      username: '',
+      userId: -1,
+      messages: [],
+    },
   },
 };
 
@@ -26,7 +29,7 @@ beforeEach(() => {
 });
 
 test('DEFAULT: should return the default state', () => {
-  expect(user(undefined, { type: 'NON_EXISTANT' })).toEqual(defaultState);
+  expect(user(undefined, { type: 'NON_EXISTANT' })).toEqual(defaultState.user);
 });
 
 test('GET: should set a user with name, userId, and the login message', async () => {
@@ -37,9 +40,8 @@ test('GET: should set a user with name, userId, and the login message', async ()
   });
 
   await store.dispatch(getUser(username)).then(() => {
-    // TODO: This action is not returning what it should!;
-    expect(store.getState().user).toBe({
-      user: username,
+    expect(store.getState().user.user).toEqual({
+      username: username,
       userId: 1,
       message: 'User Logged In',
     });
@@ -54,7 +56,7 @@ test('POST: should set a new user with signup message', async () => {
   });
 
   await store.dispatch(postUser(username)).then(() => {
-    expect(store.getState().user).toBe({
+    expect(store.getState().user.user).toEqual({
       message: 'User was successfully created',
       userId: 2,
     });

@@ -44,6 +44,6 @@ test('GET: it should return reservation data', async () => {
   mock.onGet(`${rootUrl}/api/v1/users/${userId}/reservations`).reply(200, reservationData);
 
   await store.dispatch(getReservationData(userId)).then(() => {
-    expect(store.getState()).toBe(reservationData);
+    expect(store.getState().reservations).toEqual(reservationData.reservations);
   });
 });

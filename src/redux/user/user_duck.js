@@ -62,27 +62,25 @@ const getUser = (username) => (dispatch) => {
 };
 
 const postUser = (username) => async (dispatch) => {
-  axios.post(`${rootUrl}/api/v1/users`, { name: username })
-    .then((response) => {
-      const { data } = response;
-
-      dispatch(
-        {
-          type: SIGNUP,
-          userId: data.user_id !== (undefined || null) ? data.user_id : null,
-          message: data.message,
-        },
-      );
-    }).catch((error) => {
-      dispatch(
-
-        {
-          type: SIGNUP,
-          userId: null,
-          message: error.response.data.errors.reduce((acc, error) => `${acc}, ${error}`, ''),
-        },
-      );
-    });
+  try {
+    const { data } = await axios
+          .post(`${rootUrl}/api/v1/users`, { name: username });
+    dispatch(
+      {
+        type: SIGNUP,
+        userId: data.user_id || -1,
+        message: data.message,
+      },
+    );
+  } catch (error) {
+    dispatch(
+      {
+        type: SIGNUP,
+        userId: -1,
+        message: error.response.data.errors.reduce((acc, error) => `${acc}, ${error}`, ''),
+      },
+    );
+  }
 };
 
 const user = (state = defaultState, action) => {
