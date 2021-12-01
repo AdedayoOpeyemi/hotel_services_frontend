@@ -45,14 +45,28 @@ header video {
   transform: translateX(-50%) translateY(-50%);
 }
 
-header .container {
-  position: relative;
-  z-index: 2;
+main {
+  max-height: 100vh;
+  overflow-y: scroll;
 }
 
 .sidebarcont {
-  z-index: 99;
-  position: absolute;
+  position: fixed;
+  width: 100%;
+  max-width: 250px;
+  z-index: 10;
+  border-right: 1px solid #efefef;
+}
+
+@media (min-width: 576px){
+  .sidebarcont {
+    position: relative;
+  }
+}
+
+header .container {
+  position: relative;
+  z-index: 2;
 }
 
 .nav-link:active,
@@ -67,14 +81,6 @@ i:hover {
   color: #97c036;
 }
 
-.nav-menu {
-  display: flex;
-  position: fixed;
-  top: 0;
-  left: -130%;
-  transition: 850ms;
-}
-
 .nav-menu.active {
   left: 0;
   width: 200px;
@@ -82,8 +88,10 @@ i:hover {
 }
 
 .menubtn {
-  z-index: 0;
   position: fixed;
+  top: 10px;
+  left: 10px;
+  z-index: 20;
 }
 
 .sidebarbg {
