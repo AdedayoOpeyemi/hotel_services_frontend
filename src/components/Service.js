@@ -1,5 +1,5 @@
 import React from 'react';
-import { useNavigate, useParams, Link } from 'react-router-dom';
+import { useNavigate, useParams } from 'react-router-dom';
 import { useSelector, useDispatch } from 'react-redux';
 import { BiLeftArrow } from 'react-icons/bi';
 import { currentService } from '../redux/service/service_duck';
@@ -25,10 +25,10 @@ const Service = () => {
           <div className="row g-0">
             <div className="col-md-8 d-flex flex-column">
               <img src={service.imageUrl} className="img-fluid w-50 mx-auto" alt="..." />
-                <button type="button" className="btn btn-light green text-white fw-bolder go-back mt-auto" aria-label="switch" onClick={() => navigate('/services')}>
-                  <BiLeftArrow className="imported-icon text-white" />
-                </button>
-              </div>
+              <button type="button" className="btn btn-light green text-white fw-bolder go-back mt-auto" aria-label="switch" onClick={() => navigate('/services')}>
+                <BiLeftArrow className="imported-icon text-white" />
+              </button>
+            </div>
             <div className="col-md-4">
               <div className="card-body px-5">
                 <h2 className="card-title text-center mb-lg-5">{service.name}</h2>
