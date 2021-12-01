@@ -1,5 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import PropTypes from 'prop-types';
+import { useNavigate } from 'react-router-dom';
+import { useSelector } from 'react-redux';
 import Sidebar from './Sidebar';
 
 const navbarOptions = {
@@ -15,6 +17,10 @@ const navbarOptions = {
 
 const MainPage = ({ type, children }) => {
   const [showSidebar, setShowSidebar] = useState(navbarOptions[type]);
+  const currentUser = useSelector((state) => state.user.user.userId);
+  const navigate = useNavigate();
+
+  if (currentUser === -1) navigate('/login');
 
   useEffect(() => {
     setShowSidebar(navbarOptions[type]);
