@@ -1,7 +1,3 @@
-/**
- * @jest-environment jsdom
- */
-
 import MockAdapter from 'axios-mock-adapter';
 import axios from 'axios';
 import user, {
@@ -30,7 +26,7 @@ beforeEach(() => {
 });
 
 test('DEFAULT: should return the default state', () => {
-  expect(user(undefined, { type: 'NON_EXISTANT' })).toStrictEqual(defaultState);
+  expect(user(undefined, { type: 'NON_EXISTANT' })).toEqual(defaultState);
 });
 
 test('GET: should set a user with name, userId, and the login message', async () => {

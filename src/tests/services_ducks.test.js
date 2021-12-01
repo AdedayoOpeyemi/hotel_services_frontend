@@ -1,7 +1,3 @@
-/**
- * @jest-environment jsdom
- */
-
 import MockAdapter from 'axios-mock-adapter';
 import axios from 'axios';
 import services, { getServices, postService } from '../redux/service/service_duck';
@@ -48,14 +44,14 @@ beforeEach(() => {
 });
 
 test('DEFAULT: return initial state', () => {
-  expect(services(undefined, { type: 'NON_EXISTANT' })).toStrictEqual(initialState);
+  expect(services(undefined, { type: 'NON_EXISTANT' })).toEqual(initialState);
 });
 
 test('GET: should return a list of services', async () => {
   mock.onGet(`${rootUrl}/api/v1/services`).reply(200, servicesGetResponse);
 
   await store.dispatch(getServices()).then(() => {
-    expect(store.getState().services).toStrictEqual({
+    expect(store.getState().services).toEqual({
       services: [{
         id: 1,
         name: 'pool time',

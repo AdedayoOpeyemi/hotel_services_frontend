@@ -1,7 +1,3 @@
-/**
- * @jest-environment jsdom
- */
-
 import MockAdapter from 'axios-mock-adapter';
 import axios from 'axios';
 import reservations, { getReservationData } from '../redux/reservation/reservation_duck';
@@ -22,7 +18,7 @@ beforeEach(() => {
 });
 
 test('DEFAULT: it should return the default state', () => {
-  expect(reservations(undefined, { type: 'NON_EXISTANT' })).toStrictEqual(defaultState);
+  expect(reservations(undefined, { type: 'NON_EXISTANT' })).toEqual(defaultState);
 });
 
 test('GET: it should return reservation data', async () => {
