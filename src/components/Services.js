@@ -11,21 +11,16 @@ function Services() {
   }, []);
 
   return (
-    <div className="container-fluid ps-sm-5">
-      <div className="row ms-sm-5 ps-sm-5 pt-5">
-
-        <div className="row justify-content-center align-items-center px-sm-5 ms-sm-5 pt-5">
-          <div className="row">
-            <h1 className="text-center text-uppercase fw-bolder tittle">
-              All Services
-            </h1>
-            <p className="fw-lighter text-center mb-3 fw-bold grey">
-              Please select a Service
-            </p>
-            <p className="text-center fw-lighter grey">***************</p>
-            <CarouselReact />
-          </div>
-        </div>
+    <div className="container-fluid vh-100 d-flex justify-content-center align-items-center">
+      <div className="row w-100">
+        <h1 className="text-center text-uppercase fw-bolder tittle">
+          All Services
+        </h1>
+        <p className="fw-lighter text-center mb-3 fw-bold grey">
+          Please select a Service
+        </p>
+        <p className="text-center fw-lighter grey">***************</p>
+        <CarouselReact />
       </div>
     </div>
   );

@@ -15,7 +15,7 @@ function CarouselReact() {
   return (
     <div className="carouselcont">
       <div className="carousel-wrapper">
-        <Carousel breakPoints={breakPoints}>
+        <Carousel breakPoints={breakPoints} pagination={false}>
           {services.services
         && services.services.map(({
           id, name, description, imageUrl,
