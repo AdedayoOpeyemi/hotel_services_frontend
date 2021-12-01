@@ -25,9 +25,11 @@ const Service = () => {
           <div className="row g-0">
             <div className="col-md-8 d-flex flex-column">
               <img src={service.imageUrl} className="img-fluid w-50 mx-auto" alt="..." />
-              <button type="button" className="btn btn-light green text-white fw-bolder go-back mt-auto" aria-label="switch">
-                <Link to="/services"><BiLeftArrow className="imported-icon text-white" /></Link>
-              </button>
+              <Link to="/services">
+                <button type="button" className="btn btn-light green text-white fw-bolder go-back mt-auto" aria-label="switch">
+                  <BiLeftArrow className="imported-icon text-white" />
+                </button>
+              </Link>
             </div>
             <div className="col-md-4">
               <div className="card-body px-5">
