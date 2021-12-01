@@ -31,9 +31,11 @@ test('DEFAULT: should return the default state', () => {
 
 test('GET: should set a user with name, userId, and the login message', async () => {
   const username = 'John';
-  mock.onGet(`${rootUrl}/api/v1/users`, { params: { name: username } }).reply(202, {
-    message: 'User Logged In',
-    user_id: 1,
+  mock.onGet(`${rootUrl}/api/v1/users`).reply(202, {
+    data: {
+      message: 'User Logged In',
+      user_id: 1,
+    },
   });
 
   await store.dispatch(getUser(username)).then(() => {

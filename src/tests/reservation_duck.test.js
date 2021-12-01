@@ -24,26 +24,26 @@ test('DEFAULT: it should return the default state', () => {
 test('GET: it should return reservation data', async () => {
   const userId = '1';
 
-  const reservationData = {
-    user_id: 1,
-    reservations: [
-      {
-        reservation_id: 1,
-        date: {
-          day: 14,
-          month: 4,
-          year: 2021,
-        },
-        service_name: 'Pool time',
-        service_description: 'Bring some of your friends',
-        image_url: 'https://picsum.photos/200/300',
-        city: 'Los Angeles',
+  const reservationData = [
+    {
+      reservation_id: 1,
+      date: {
+        day: 14,
+        month: 4,
+        year: 2021,
       },
-    ],
-  };
+      service_name: 'Pool time',
+      service_description: 'Bring some of your friends',
+      image_url: 'https://picsum.photos/200/300',
+      city: 'Los Angeles',
+    },
+  ];
+
   mock.onGet(`${rootUrl}/api/v1/users/${userId}/reservations`).reply(200, reservationData);
 
   await store.dispatch(getReservationData(userId)).then(() => {
-    expect(store.getState()).toBe(reservationData);
+    console.log('getState:', store.getState().reservations);
+    console.log('DATA:', reservationData);
+    expect(store.getState().reservations).toBe(reservationData);
   });
 });
