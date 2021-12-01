@@ -8,6 +8,7 @@ import isServiceValid from '../utils/serviceValidation';
 import ValidationError from './ValidationError';
 
 function NewService() {
+  const currentUser = useSelector((state) => state.user.user.userId);
   const [newService, setNewService] = useState({
     name: '',
     description: '',
@@ -40,7 +41,7 @@ function NewService() {
       imageUrlStatus,
     }, services.services);
     setValidation(newValidation);
-    if (newValidation.valid) {
+    if (newValidation.valid && currentUser !== -1) {
       const serviceToPost = {
         ...newService,
         price: Math.round(newService.price * 100),
@@ -48,7 +49,7 @@ function NewService() {
       dispatch(postService(serviceToPost)).then(() => {
         navigate('/services');
       });
-    }
+    } else navigate('/login');
   };
 
   return (
