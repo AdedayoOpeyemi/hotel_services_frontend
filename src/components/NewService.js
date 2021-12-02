@@ -7,13 +7,18 @@ import backgroundImage from './assets/new-service-background.jpg';
 import isServiceValid from '../utils/serviceValidation';
 import ValidationError from './ValidationError';
 
+const randomImageUrl = () => {
+  const rand = Math.round(Math.random() * 1000) + 1;
+  return `https://picsum.photos/id/${rand}/500`;
+};
+
 function NewService() {
   const currentUser = useSelector((state) => state.user.user.userId);
   const [newService, setNewService] = useState({
     name: '',
     description: '',
     price: '',
-    imageUrl: '',
+    imageUrl: 'https://picsum.photos/id/237/500',
   });
 
   const [validation, setValidation] = useState({
@@ -44,6 +49,7 @@ function NewService() {
     if (newValidation.valid && currentUser !== -1) {
       const serviceToPost = {
         ...newService,
+        imageUrl: randomImageUrl(),
         price: Math.round(newService.price * 100),
       };
       dispatch(postService(serviceToPost)).then(() => {
@@ -95,7 +101,7 @@ function NewService() {
               <div className="mb-3">
                 <div className="input-group">
                   <div className="input-group-prepend" />
-                  <input type="text" className="form-control text-center rounded-pill mb-3" placeholder="Service image URL" aria-label="Service_image" aria-describedby="basic-addon1" onChange={handleTextChange('imageUrl')} />
+                  <input type="text" className="form-control text-center rounded-pill mb-3 d-none" placeholder="Service image URL" aria-label="Service_image" aria-describedby="basic-addon1" onChange={handleTextChange('imageUrl')} value={newService.imageUrl} />
                 </div>
                 {validation.imageUrl
                  && <ValidationError errorMessage={validation.imageUrl} />}
