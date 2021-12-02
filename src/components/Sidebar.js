@@ -13,24 +13,24 @@ function Sidebar({ show }) {
         <div className="row h-100 ps-3 ">
           <h1 className="sidebarfont rotate text-center">Services</h1>
           <div className="list-group border-0 ">
-            <NavLink to="/services" className="nav-link text-dark">
+            <NavLink to="/services" className="nav-link text-dark sidefont">
               Services
             </NavLink>
-            <NavLink to="/reserve" className="nav-link text-dark">
+            <NavLink to="/reserve" className="nav-link text-dark sidefont">
               Reserve
             </NavLink>
-            <NavLink to="/reservations" className="nav-link text-dark">
+            <NavLink to="/reservations" className="nav-link text-dark sidefont">
               My Reservations
             </NavLink>
-            <NavLink to="/newservice" className="nav-link text-dark">
+            <NavLink to="/newservice" className="nav-link text-dark sidefont">
               Add Services
             </NavLink>
-            <NavLink to="/delete" className="nav-link text-dark">
+            <NavLink to="/delete" className="nav-link text-dark sidefont">
               Delete service
             </NavLink>
           </div>
           <div className="text-center row mt-auto pb-5">
-            <NavLink to="/login" type="button" onClick={() => dispatch(logOut)} className="nav-link text-dark">
+            <NavLink to="/login" type="button" onClick={() => dispatch(logOut)} className="nav-link text-dark sidefont">
               Log out
             </NavLink>
             <div className="col fs-3">

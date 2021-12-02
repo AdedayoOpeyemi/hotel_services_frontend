@@ -213,3 +213,9 @@ button.rec.rec-arrow:focus {
   /* Opera */
   -o-transform: rotate(-10deg);
 }
+
+.sidefont {
+  font-family: 'Mukta', sans-serif;
+  font-size: 25px;
+  font-weight: bold;
+}
