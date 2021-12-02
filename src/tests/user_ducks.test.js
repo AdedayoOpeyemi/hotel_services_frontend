@@ -41,7 +41,7 @@ test('GET: should set a user with name, userId, and the login message', async ()
 
   await store.dispatch(getUser(username)).then(() => {
     expect(store.getState().user.user).toEqual({
-      username: username,
+      username,
       userId: 1,
       message: 'User Logged In',
     });
