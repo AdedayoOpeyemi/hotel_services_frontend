@@ -1,14 +1,23 @@
 import React, { useEffect } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
+import { useNavigate } from 'react-router-dom';
 import { cancelServiceToApi, getServices } from '../redux/service/service_duck';
 
 function Delete() {
   const dispatch = useDispatch();
+  const navigate = useNavigate();
   const services = useSelector((state) => state.services);
+  const currentUser = useSelector((state) => state.user.user.userId);
 
   useEffect(() => {
     dispatch(getServices());
   }, []);
+
+  const checkUser = (id) => {
+    if (currentUser !== -1) {
+      dispatch(cancelServiceToApi(id));
+    } else navigate('/login');
+  };
 
   return (
     <div className="pt-5">
@@ -37,7 +46,7 @@ function Delete() {
                       type="button"
                       className="btn w-50 green text-white fw-bolder rounded-pill mt-lg-5"
                       id={id}
-                      onClick={() => dispatch(cancelServiceToApi(id))}
+                      onClick={() => checkUser(id)}
                     >
                       Delete Service
                     </button>

@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import PropTypes from 'prop-types';
+// import PropTypes from 'prop-types';
 import { useNavigate } from 'react-router-dom';
 import backgroundImage from './assets/new-reservation-background.jpg';
 import {
@@ -16,14 +16,15 @@ import { postReservationToApi } from '../redux/reservation/reservation_duck';
 const yearsToDisplay = 5;
 
 const findDefault = (serviceId, services) => {
-  const found = services.find(({ id }) => id === serviceId);
+  const found = services.find((service) => service.id === serviceId);
   if (found) return found.id;
   return -1;
 };
 
-function Reserve({ serviceId }) {
+function Reserve() {
   const user = useSelector((state) => state.user.user);
   const services = useSelector((state) => state.services.services);
+  const serviceId = useSelector((state) => state.services.currentService);
   const dispatch = useDispatch();
   const navigate = useNavigate();
 
@@ -196,12 +197,12 @@ function Reserve({ serviceId }) {
   );
 }
 
-Reserve.propTypes = {
-  serviceId: PropTypes.number,
-};
+// Reserve.propTypes = {
+//   serviceId: PropTypes.number,
+// };
 
-Reserve.defaultProps = {
-  serviceId: -1,
-};
+// Reserve.defaultProps = {
+//   serviceId: -1,
+// };
 
 export default Reserve;

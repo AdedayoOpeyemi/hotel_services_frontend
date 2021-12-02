@@ -11,19 +11,22 @@
 ![Services](./src/components/assets/services.png)
 ![Service](./src/components/assets/service.png)
 ![Reserve](./src/components/assets/reserve.png)
+![Reservations](./src/components/assets/Reservations.png)
+![newService](./src/components/assets/newService.png)
 ![Delete](./src/components/assets/delete.png)
 
 Additional description about the project and its features.
 
 ## Built With
-
 - Javascript
 - React
 - Redux
 - Bootstrap
 
-### Installation
+## Installation
+
 **Follow the Back-end instructions available on:**
+
 ```
 https://github.com/RokoVarano/hotel_services_backend
 ```
@@ -40,6 +43,14 @@ https://github.com/RokoVarano/hotel_services_backend
    ```sh
    npm start
    ```
+
+### Testing
+
+1. Run 
+   ```sh
+   yarn test
+   ```
+
 ### Prerequisites
 
 * No prerequisites needed for this project.

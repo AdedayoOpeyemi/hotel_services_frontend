@@ -188,3 +188,35 @@ button.rec.rec-arrow:focus {
 .left-side {
   border-right: rgba(0, 0, 0, 0.103) 1px solid;
 }
+
+.sidebarfont {
+  font-family: 'Dancing Script', cursive;
+  font-weight: 400;
+  text-decoration: underline;
+  font-size: 60px;
+}
+
+.rotate {
+  transform: rotate(-10deg);
+
+  /* Legacy vendor prefixes that you probably don't need... */
+
+  /* Safari */
+  -webkit-transform: rotate(-10deg);
+
+  /* Firefox */
+  -moz-transform: rotate(-10deg);
+
+  /* IE */
+  -ms-transform: rotate(-10deg);
+
+  /* Opera */
+  -o-transform: rotate(-10deg);
+}
+
+.sidefont {
+  font-family: 'Mukta', sans-serif;
+  font-size: 18px;
+  font-weight: bold;
+  text-transform: uppercase;
+}

@@ -5,6 +5,7 @@ const MISSING_FIELDS = 'MISSING_FIELDS';
 const GET_SERVICES = 'GET_SERVICES';
 const API_FAILURE = 'API_FAILURE';
 const CANCEL_SERVICE = 'CANCEL_SERVICE';
+const CURRENT_SERVICE = 'CURRENT_SERVICE';
 
 const port = '3000';
 const rootUrl = `http://localhost:${port}`;
@@ -92,6 +93,11 @@ const cancelServiceToApi = (serviceId) => async (dispatch) => {
   }
 };
 
+const currentService = (serviceId) => ({
+  type: CURRENT_SERVICE,
+  serviceId,
+});
+
 const services = (state = initialState, action) => {
   switch (action.type) {
     case GET_SERVICES:
@@ -108,6 +114,11 @@ const services = (state = initialState, action) => {
         ...state,
         errors: action.messages,
       };
+    case CURRENT_SERVICE:
+      return {
+        ...state,
+        currentService: action.serviceId,
+      };
     case CANCEL_SERVICE:
       return state;
     default:
@@ -117,5 +128,5 @@ const services = (state = initialState, action) => {
 
 export default services;
 export {
-  postService, defaultService, getServices, cancelServiceToApi,
+  postService, defaultService, getServices, cancelServiceToApi, currentService,
 };
