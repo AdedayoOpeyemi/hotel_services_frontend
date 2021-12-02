@@ -1,8 +1,10 @@
+
+
 import React from 'react';
 import TestRenderer from 'react-test-renderer';
 import { Provider } from 'react-redux';
 import {
-  BrowserRouter as Router,
+  MemoryRouter as Router,
 } from 'react-router-dom';
 import { createMemoryHistory } from 'history';
 import store from '../redux/configurateStore';
@@ -17,6 +19,7 @@ import Services from '../components/Services';
 import Sidebar from '../components/Sidebar';
 import Signup from '../components/Signup';
 import Delete from '../components/Delete';
+import './LocalStorageMock';
 
 describe('Render Carousel', () => {
   it('Renders the Carousel', () => {
@@ -136,6 +139,8 @@ describe('Render Service page', () => {
 
 describe('Render Services page', () => {
   it('Renders the Services page', () => {
+    const history = createMemoryHistory();
+    history.push('/services/1');
     const services = TestRenderer.create(
       <Provider store={store}>
         <Router history={history}>
