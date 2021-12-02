@@ -5,8 +5,7 @@ const GET_RESERVATION = 'GET_RESERVATION';
 const LOAD_RESERVATION = 'LOAD_RESERVATION';
 const CANCEL_RESERVATION = 'CANCEL_RESERVATION';
 
-const port = '3000';
-const rootUrl = `http://localhost:${port}`;
+const rootUrl = 'https://hotel-services-2021.herokuapp.com/';
 
 const initialState = [];
 

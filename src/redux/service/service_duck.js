@@ -7,8 +7,7 @@ const API_FAILURE = 'API_FAILURE';
 const CANCEL_SERVICE = 'CANCEL_SERVICE';
 const CURRENT_SERVICE = 'CURRENT_SERVICE';
 
-const port = '3000';
-const rootUrl = `http://localhost:${port}`;
+const rootUrl = 'https://hotel-services-2021.herokuapp.com/';
 
 const defaultService = () => ({
   message: 'no Service yet',
