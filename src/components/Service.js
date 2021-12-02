@@ -14,7 +14,7 @@ const Service = () => {
   if (service === undefined) navigate('/services');
 
   const toReserve = () => {
-    dispatch(currentService(parseInt(id,10)));
+    dispatch(currentService(parseInt(id, 10)));
     navigate('/reserve');
   };
 
