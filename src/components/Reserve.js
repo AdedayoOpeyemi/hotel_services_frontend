@@ -16,7 +16,7 @@ import { postReservationToApi } from '../redux/reservation/reservation_duck';
 const yearsToDisplay = 5;
 
 const findDefault = (serviceId, services) => {
-  const found = services.find((service) => service.id.toString() === serviceId);
+  const found = services.find((service) => service.id === serviceId);
   if (found) return found.id;
   return -1;
 };
