@@ -1,11 +1,16 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
 exports[`Render Carousel Renders the Carousel 1`] = `
 <div
-  className="carouselcont">
+  className="carouselcont"
+>
   <div
-    className="carousel-wrapper">
+    className="carousel-wrapper"
+  >
     <div
       className="sc-jRQBWg qoLPS rec rec-carousel-wrapper "
-      style={Object {}}>
+      style={Object {}}
+    >
       <div
         className="sc-eCImPb jMNKZk rec rec-carousel"
         size={
@@ -17,18 +22,21 @@ exports[`Render Carousel Renders the Carousel 1`] = `
           Object {
             "height": 0,
           }
-        }>
+        }
+      >
         <button
           className="sc-bdvvtL cNNJIt rec rec-arrow rec rec-arrow-left"
           disabled={true}
           onClick={[Function]}
           style={Object {}}
           tabIndex={0}
-          type="button">
+          type="button"
+        >
           ❮
         </button>
         <div
-          className="sc-dkPtRN fPDpuU rec rec-slider-container">
+          className="sc-dkPtRN fPDpuU rec rec-slider-container"
+        >
           <div
             className="sc-hKwDye jZlXPY rec rec-slider"
             style={
@@ -38,7 +46,8 @@ exports[`Render Carousel Renders the Carousel 1`] = `
                 "top": "auto",
                 "transition": "all 500ms ease",
               }
-            }>
+            }
+          >
             <div
               className="rec rec-swipable"
               onMouseDown={[Function]}
@@ -47,7 +56,8 @@ exports[`Render Carousel Renders the Carousel 1`] = `
                   "display": "flex",
                   "flexDirection": "row",
                 }
-              } />
+              }
+            />
           </div>
         </div>
         <button
@@ -56,7 +66,8 @@ exports[`Render Carousel Renders the Carousel 1`] = `
           onClick={[Function]}
           style={Object {}}
           tabIndex={0}
-          type="button">
+          type="button"
+        >
           ❯
         </button>
       </div>
@@ -65,41 +76,848 @@ exports[`Render Carousel Renders the Carousel 1`] = `
 </div>
 `;
 
+exports[`Render Delete page Renders the Delete page 1`] = `
+<div
+  className="pt-5"
+>
+  <h1
+    className="text-center mb-3"
+  >
+    Delete Service
+  </h1>
+   
+</div>
+`;
+
+exports[`Render LoginForm page Renders the LoginForm page 1`] = `
+<header>
+  <video
+    autoPlay="autoplay"
+    loop="loop"
+    muted={true}
+  >
+    <source
+      src="pool.mp4"
+      type="video/mp4"
+    />
+  </video>
+  <div
+    className="container"
+  >
+    <div
+      className="row vh-100 justify-content-center align-items-center"
+    >
+      <div
+        className="alert alert-warning alert-dismissible fade show d-none"
+        role="alert"
+      >
+        <strong>
+          Holy guacamole!
+        </strong>
+         
+        You should check in on some of those fields below.
+        <button
+          aria-label="Close"
+          className="btn-close"
+          data-bs-dismiss="alert"
+          type="button"
+        />
+      </div>
+      <div
+        className="col text-center text-white"
+      >
+        <h1>
+          Welcome to City Services
+        </h1>
+        <h5
+          className="fs-6 fw-normal"
+        />
+        <input
+          aria-describedby="emailHelp"
+          className="form-control my-3"
+          id="userName"
+          placeholder="User Name"
+          type="text"
+        />
+        <button
+          className="btn green mx-3"
+          onClick={[Function]}
+          type="button"
+        >
+          Login
+        </button>
+        <a
+          href="/signup"
+          onClick={[Function]}
+        >
+          <button
+            className="btn green"
+            type="button"
+          >
+            Sign up
+          </button>
+        </a>
+      </div>
+    </div>
+  </div>
+</header>
+`;
+
+exports[`Render MainPage content page Renders the MainPage page 1`] = `
+<div
+  className="d-flex"
+>
+  <button
+    className="btn green menubtn d-sm-none"
+    onClick={[Function]}
+    type="button"
+  >
+    <i
+      className="fas fa-bars"
+    />
+  </button>
+  <div
+    className="sidebarcont sidebarbg h-100 "
+  >
+    <nav
+      className="nav-menu vh-100 pt-5 "
+    >
+      <div
+        className="row h-100 ps-3 "
+      >
+        <h1
+          className="sidebarfont rotate text-center"
+        >
+          Services
+        </h1>
+        <div
+          className="list-group border-0 "
+        >
+          <a
+            className="nav-link text-dark sidefont"
+            href="/services"
+            onClick={[Function]}
+          >
+            Services
+          </a>
+          <a
+            className="nav-link text-dark sidefont"
+            href="/reserve"
+            onClick={[Function]}
+          >
+            Reserve
+          </a>
+          <a
+            className="nav-link text-dark sidefont"
+            href="/reservations"
+            onClick={[Function]}
+          >
+            My Reservations
+          </a>
+          <a
+            className="nav-link text-dark sidefont"
+            href="/newservice"
+            onClick={[Function]}
+          >
+            Add Services
+          </a>
+          <a
+            className="nav-link text-dark sidefont"
+            href="/delete"
+            onClick={[Function]}
+          >
+            Delete service
+          </a>
+        </div>
+        <div
+          className="text-center row mt-auto pb-5"
+        >
+          <a
+            className="nav-link text-dark sidefont"
+            href="/login"
+            onClick={[Function]}
+          >
+            Log out
+          </a>
+          <div
+            className="col fs-3"
+          >
+            <i
+              className="fab fa-facebook"
+            />
+            <i
+              className="fab fa-twitter px-3"
+            />
+            <i
+              className="fab fa-instagram"
+            />
+          </div>
+        </div>
+      </div>
+    </nav>
+  </div>
+  <main
+    className="container-fluid p-0"
+  >
+    <div />
+  </main>
+</div>
+`;
+
+exports[`Render MainPage form page Renders the MainPage page 1`] = `
+<div
+  className="d-flex"
+>
+  <button
+    className="btn green menubtn "
+    onClick={[Function]}
+    type="button"
+  >
+    <i
+      className="fas fa-bars"
+    />
+  </button>
+  <div
+    className="sidebarcont sidebarbg h-100 d-none"
+  >
+    <nav
+      className="nav-menu vh-100 pt-5 "
+    >
+      <div
+        className="row h-100 ps-3 "
+      >
+        <h1
+          className="sidebarfont rotate text-center"
+        >
+          Services
+        </h1>
+        <div
+          className="list-group border-0 "
+        >
+          <a
+            className="nav-link text-dark sidefont"
+            href="/services"
+            onClick={[Function]}
+          >
+            Services
+          </a>
+          <a
+            className="nav-link text-dark sidefont"
+            href="/reserve"
+            onClick={[Function]}
+          >
+            Reserve
+          </a>
+          <a
+            className="nav-link text-dark sidefont"
+            href="/reservations"
+            onClick={[Function]}
+          >
+            My Reservations
+          </a>
+          <a
+            className="nav-link text-dark sidefont"
+            href="/newservice"
+            onClick={[Function]}
+          >
+            Add Services
+          </a>
+          <a
+            className="nav-link text-dark sidefont"
+            href="/delete"
+            onClick={[Function]}
+          >
+            Delete service
+          </a>
+        </div>
+        <div
+          className="text-center row mt-auto pb-5"
+        >
+          <a
+            className="nav-link text-dark sidefont"
+            href="/login"
+            onClick={[Function]}
+          >
+            Log out
+          </a>
+          <div
+            className="col fs-3"
+          >
+            <i
+              className="fab fa-facebook"
+            />
+            <i
+              className="fab fa-twitter px-3"
+            />
+            <i
+              className="fab fa-instagram"
+            />
+          </div>
+        </div>
+      </div>
+    </nav>
+  </div>
+  <main
+    className="container-fluid p-0"
+  >
+    <div />
+  </main>
+</div>
+`;
+
+exports[`Render NewService page Renders the NewService page 1`] = `
+<header>
+  <img
+    alt="..."
+    src="new-service-background.jpg"
+  />
+  <div
+    className="container text-white px-5"
+  >
+    <div
+      className="row vh-100 justify-content-center align-items-center"
+    >
+      <div
+        className="row"
+      >
+        <h1
+          className="text-center mb-3"
+        >
+          Create a new Service
+        </h1>
+        <p
+          className="text-center mb-4"
+        >
+          Add a great service to our already impressive catalog!
+        </p>
+        <div
+          className="row"
+        >
+          <div
+            className="mb-3"
+          >
+            <div
+              className="input-group"
+            >
+              <div
+                className="input-group-prepend"
+              />
+              <input
+                aria-describedby="basic-addon1"
+                aria-label="service_name"
+                className="form-control text-center rounded-pill mb-3"
+                onChange={[Function]}
+                placeholder="Service name"
+                type="text"
+              />
+            </div>
+            
+          </div>
+        </div>
+        <div
+          className="row"
+        >
+          <div
+            className="mb-3"
+          >
+            <div
+              className="input-group"
+            >
+              <div
+                className="input-group-prepend"
+              />
+              <input
+                aria-describedby="basic-addon1"
+                aria-label="Service_description"
+                className="form-control text-center rounded-pill mb-3"
+                onChange={[Function]}
+                placeholder="Service Description"
+                type="text"
+              />
+            </div>
+            
+          </div>
+        </div>
+        <div
+          className="row"
+        >
+          <div
+            className="mb-3"
+          >
+            <div
+              className="input-group"
+            >
+              <div
+                className="input-group-prepend"
+              />
+              <input
+                aria-describedby="basic-addon1"
+                aria-label="Service_price"
+                className="form-control text-center rounded-pill mb-3"
+                min="0"
+                onChange={[Function]}
+                placeholder="Service Price"
+                type="number"
+              />
+            </div>
+            
+          </div>
+        </div>
+        <div
+          className="row"
+        >
+          <div
+            className="mb-3"
+          >
+            <div
+              className="input-group"
+            >
+              <div
+                className="input-group-prepend"
+              />
+              <input
+                aria-describedby="basic-addon1"
+                aria-label="Service_image"
+                className="form-control text-center rounded-pill mb-3 d-none"
+                onChange={[Function]}
+                placeholder="Service image URL"
+                type="text"
+                value="https://picsum.photos/id/237/500"
+              />
+            </div>
+            
+          </div>
+        </div>
+        <div
+          className="row"
+        >
+          <div
+            className="col"
+          >
+            <button
+              className="btn btn-light w-100 textg fw-bolder rounded-pill mb-3"
+              onClick={[Function]}
+              type="button"
+            >
+              Create
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</header>
+`;
+
 exports[`Render Reservations page Renders the Reservations page 1`] = `
 <div
-  className="pt-5">
+  className="pt-5"
+>
   <h1
-    className="text-center mb-3">
+    className="text-center mb-3"
+  >
     My Reservations
   </h1>
    
 </div>
 `;
 
+exports[`Render Reserve page Renders the Reserve page 1`] = `
+<header>
+  <img
+    alt="..."
+    src="new-reservation-background.jpg"
+  />
+  <div
+    className="container text-white"
+  >
+    <div
+      className="row vh-100 justify-content-center align-items-center"
+    >
+      <div
+        className="row"
+      >
+        <h1
+          className="text-center"
+        >
+          New Reservation
+        </h1>
+        <p
+          className="text-center mb-3"
+        >
+          Our hotels have best-in-class services. Pick an individual service for a luxurious stay or a social service to stand out.
+        </p>
+        <div
+          className="row my-3"
+        >
+          <div
+            className="col-md-6"
+          >
+            <div
+              className="input-group mb-3"
+            >
+              <input
+                aria-describedby="basic-addon1"
+                aria-label="Username"
+                className="form-control rounded-pill border-0 text-center"
+                disabled={true}
+                type="text"
+                value=""
+              />
+            </div>
+          </div>
+          <div
+            className="col-md-6"
+          >
+            <select
+              className="form-select rounded-pill border-0"
+              defaultValue={-1}
+              id="service-name"
+              onChange={[Function]}
+            >
+              <option
+                disabled={true}
+                value={-1}
+              >
+                Choose a service to reserve
+              </option>
+            </select>
+            
+          </div>
+        </div>
+        <div
+          className="row"
+        >
+          <div
+            className="col-md-2"
+          >
+            <div
+              className="input-group mb-3 "
+            >
+              <select
+                className="form-select rounded-pill btng text-white border-0"
+                id="year"
+                onChange={[Function]}
+              >
+                <option
+                  value={2021}
+                >
+                  2021
+                </option>
+                <option
+                  value={2022}
+                >
+                  2022
+                </option>
+                <option
+                  value={2023}
+                >
+                  2023
+                </option>
+                <option
+                  value={2024}
+                >
+                  2024
+                </option>
+                <option
+                  value={2025}
+                >
+                  2025
+                </option>
+                <option
+                  value={2026}
+                >
+                  2026
+                </option>
+              </select>
+              
+            </div>
+          </div>
+          <div
+            className="col-md-3 "
+          >
+            <div
+              className="input-group mb-3"
+            >
+              <select
+                className="form-select rounded-pill btng text-white border-0"
+                id="month"
+                onChange={[Function]}
+              >
+                <option
+                  value={12}
+                >
+                  December
+                </option>
+              </select>
+            </div>
+          </div>
+          <div
+            className="col-md-2"
+          >
+            <div
+              className="input-group mb-3"
+            >
+              <select
+                className="form-select rounded-pill btng text-white border-0"
+                id="day"
+                onChange={[Function]}
+              >
+                <option
+                  value={2}
+                >
+                  2
+                </option>
+                <option
+                  value={3}
+                >
+                  3
+                </option>
+                <option
+                  value={4}
+                >
+                  4
+                </option>
+                <option
+                  value={5}
+                >
+                  5
+                </option>
+                <option
+                  value={6}
+                >
+                  6
+                </option>
+                <option
+                  value={7}
+                >
+                  7
+                </option>
+                <option
+                  value={8}
+                >
+                  8
+                </option>
+                <option
+                  value={9}
+                >
+                  9
+                </option>
+                <option
+                  value={10}
+                >
+                  10
+                </option>
+                <option
+                  value={11}
+                >
+                  11
+                </option>
+                <option
+                  value={12}
+                >
+                  12
+                </option>
+                <option
+                  value={13}
+                >
+                  13
+                </option>
+                <option
+                  value={14}
+                >
+                  14
+                </option>
+                <option
+                  value={15}
+                >
+                  15
+                </option>
+                <option
+                  value={16}
+                >
+                  16
+                </option>
+                <option
+                  value={17}
+                >
+                  17
+                </option>
+                <option
+                  value={18}
+                >
+                  18
+                </option>
+                <option
+                  value={19}
+                >
+                  19
+                </option>
+                <option
+                  value={20}
+                >
+                  20
+                </option>
+                <option
+                  value={21}
+                >
+                  21
+                </option>
+                <option
+                  value={22}
+                >
+                  22
+                </option>
+                <option
+                  value={23}
+                >
+                  23
+                </option>
+                <option
+                  value={24}
+                >
+                  24
+                </option>
+                <option
+                  value={25}
+                >
+                  25
+                </option>
+                <option
+                  value={26}
+                >
+                  26
+                </option>
+                <option
+                  value={27}
+                >
+                  27
+                </option>
+                <option
+                  value={28}
+                >
+                  28
+                </option>
+                <option
+                  value={29}
+                >
+                  29
+                </option>
+                <option
+                  value={30}
+                >
+                  30
+                </option>
+                <option
+                  value={31}
+                >
+                  31
+                </option>
+              </select>
+            </div>
+          </div>
+          <div
+            className="col-md-3"
+          >
+            <div
+              className="input-group mb-3 "
+            >
+              <select
+                className="form-select rounded-pill btng text-white border-0"
+                defaultValue=""
+                id="city"
+                onChange={[Function]}
+              >
+                <option
+                  disabled={true}
+                  value=""
+                >
+                  Please, select a city
+                </option>
+                <option
+                  value="London"
+                >
+                  London
+                </option>
+                <option
+                  value="Melbourne"
+                >
+                  Melbourne
+                </option>
+                <option
+                  value="Zurich"
+                >
+                  Zurich
+                </option>
+                <option
+                  value="Tokyo"
+                >
+                  Tokyo
+                </option>
+                <option
+                  value="Auckland"
+                >
+                  Auckland
+                </option>
+                <option
+                  value="New York"
+                >
+                  New York
+                </option>
+              </select>
+              
+            </div>
+          </div>
+          <div
+            className="col-md-2"
+          >
+            <button
+              className="border-0 btn btn-light w-100 textg fw-bolder rounded-pill"
+              onClick={[Function]}
+              type="button"
+            >
+              Reserve
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</header>
+`;
+
 exports[`Render Services page Renders the Services page 1`] = `
 <div
-  className="container-fluid vh-100 d-flex justify-content-center align-items-center">
+  className="container-fluid vh-100 d-flex justify-content-center align-items-center"
+>
   <div
-    className="row w-100">
+    className="row w-100"
+  >
     <h1
-      className="text-center text-uppercase fw-bolder tittle">
+      className="text-center text-uppercase fw-bolder tittle"
+    >
       All Services
     </h1>
     <p
-      className="fw-lighter text-center mb-3 fw-bold grey">
+      className="fw-lighter text-center mb-3 fw-bold grey"
+    >
       Please select a Service
     </p>
     <p
-      className="text-center fw-lighter grey">
+      className="text-center fw-lighter grey"
+    >
       ***************
     </p>
     <div
-      className="carouselcont">
+      className="carouselcont"
+    >
       <div
-        className="carousel-wrapper">
+        className="carousel-wrapper"
+      >
         <div
           className="sc-jRQBWg qoLPS rec rec-carousel-wrapper "
-          style={Object {}}>
+          style={Object {}}
+        >
           <div
             className="sc-eCImPb jMNKZk rec rec-carousel"
             size={
@@ -111,18 +929,21 @@ exports[`Render Services page Renders the Services page 1`] = `
               Object {
                 "height": 0,
               }
-            }>
+            }
+          >
             <button
               className="sc-bdvvtL cNNJIt rec rec-arrow rec rec-arrow-left"
               disabled={true}
               onClick={[Function]}
               style={Object {}}
               tabIndex={0}
-              type="button">
+              type="button"
+            >
               ❮
             </button>
             <div
-              className="sc-dkPtRN fPDpuU rec rec-slider-container">
+              className="sc-dkPtRN fPDpuU rec rec-slider-container"
+            >
               <div
                 className="sc-hKwDye jZlXPY rec rec-slider"
                 style={
@@ -132,7 +953,8 @@ exports[`Render Services page Renders the Services page 1`] = `
                     "top": "auto",
                     "transition": "all 500ms ease",
                   }
-                }>
+                }
+              >
                 <div
                   className="rec rec-swipable"
                   onMouseDown={[Function]}
@@ -141,7 +963,8 @@ exports[`Render Services page Renders the Services page 1`] = `
                       "display": "flex",
                       "flexDirection": "row",
                     }
-                  } />
+                  }
+                />
               </div>
             </div>
             <button
@@ -150,7 +973,8 @@ exports[`Render Services page Renders the Services page 1`] = `
               onClick={[Function]}
               style={Object {}}
               tabIndex={0}
-              type="button">
+              type="button"
+            >
               ❯
             </button>
           </div>
@@ -159,4 +983,69 @@ exports[`Render Services page Renders the Services page 1`] = `
     </div>
   </div>
 </div>
+`;
+
+exports[`Render Signup page Renders the Signup page 1`] = `
+<header>
+  <video
+    autoPlay="autoplay"
+    loop="loop"
+    muted={true}
+  >
+    <source
+      src="pool.mp4"
+      type="video/mp4"
+    />
+  </video>
+  <div
+    className="container"
+  >
+    <div
+      className="row vh-100 justify-content-center align-items-center"
+    >
+      <div
+        className="alert alert-warning alert-dismissible fade show d-nonce d-none"
+        role="alert"
+      >
+        <strong>
+          Holy guacamole!
+        </strong>
+         
+        You should check in on some of those fields below.
+        <button
+          aria-label="Close"
+          className="btn-close"
+          data-bs-dismiss="alert"
+          type="button"
+        />
+      </div>
+      <div
+        className="col text-center text-white"
+      >
+        <h1>
+          Welcome to City Services
+        </h1>
+        <h5
+          className="fs-6 fw-normal"
+        >
+          Please Sign up using your username
+        </h5>
+        <input
+          aria-describedby="emailHelp"
+          className="form-control my-3"
+          id="userName"
+          placeholder="User Name"
+          type="text"
+        />
+        <button
+          className="btn green"
+          onClick={[Function]}
+          type="button"
+        >
+          Create User
+        </button>
+      </div>
+    </div>
+  </div>
+</header>
 `;
