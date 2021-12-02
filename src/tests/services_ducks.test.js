@@ -14,7 +14,7 @@ const initialState = {
       username: '',
       userId: -1,
       messages: [],
-    }
+    },
   },
   services: {
     services: [],
