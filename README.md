@@ -65,6 +65,12 @@ https://github.com/RokoVarano/hotel_services_backend
 * On My Reservations page you will be able to see a list of all your reservations, and also be able to cancel any of them.
 * On the Reserve page you will be able to generate a new reservations for any service by filling up the date and the city of your choice.
 
+### Kanban board
+- [Kanban board](https://github.com/RokoVarano/hotel_services_backend/projects/1)
+- [Kanban board Screenshoot](https://user-images.githubusercontent.com/57110317/142681121-8060c7cb-3270-4c90-9610-4c150bdc3c84.png)
+- In this project we worked in a group of 4 members:
+
+
 ## Authors
 
 👤 **Andres Castañeda**
