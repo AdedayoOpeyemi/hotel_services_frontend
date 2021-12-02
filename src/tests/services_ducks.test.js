@@ -9,16 +9,21 @@ const port = '3000';
 const rootUrl = `http://localhost:${port}`;
 
 const initialState = {
-  services: [],
-  errors: null,
+  user: {
+    user: {
+      username: '',
+      userId: -1,
+      messages: [],
+    },
+  },
+  services: {
+    services: [],
+    errors: null,
+  },
+  reservations: [],
 };
 
 let store = testStore(initialState);
-
-// const errors = (messages) => ({
-//   type: API_FAILURE,
-//   messages,
-// });
 
 const serviceA = {
   id: 1,
@@ -44,7 +49,7 @@ beforeEach(() => {
 });
 
 test('DEFAULT: return initial state', () => {
-  expect(services(undefined, { type: 'NON_EXISTANT' })).toEqual(initialState);
+  expect(services(undefined, { type: 'NON_EXISTENT' })).toEqual(initialState.services);
 });
 
 test('GET: should return a list of services', async () => {
@@ -52,6 +57,7 @@ test('GET: should return a list of services', async () => {
 
   await store.dispatch(getServices()).then(() => {
     expect(store.getState().services).toEqual({
+      errors: null,
       services: [{
         id: 1,
         name: 'pool time',

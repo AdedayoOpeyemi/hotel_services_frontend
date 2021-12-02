@@ -8,7 +8,20 @@ const mock = new MockAdapter(axios);
 const port = '3000';
 const rootUrl = `http://localhost:${port}`;
 
-const defaultState = [];
+const defaultState = {
+  user: {
+    user: {
+      username: '',
+      userId: -1,
+      messages: [],
+    },
+  },
+  services: {
+    services: [],
+    errors: null,
+  },
+  reservations: [],
+};
 
 let store = testStore(defaultState);
 
@@ -18,7 +31,7 @@ beforeEach(() => {
 });
 
 test('DEFAULT: it should return the default state', () => {
-  expect(reservations(undefined, { type: 'NON_EXISTANT' })).toEqual(defaultState);
+  expect(reservations(undefined, { type: 'NON_EXISTENT' })).toEqual(defaultState.reservations);
 });
 
 test('GET: it should return reservation data', async () => {
