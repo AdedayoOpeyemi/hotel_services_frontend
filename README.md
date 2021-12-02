@@ -2,6 +2,8 @@
 
 # Hotel Booking app Front-end
 
+ - [Live Demo](https://hotel-services-2021.netlify.app)
+
 ### Back-end API access on:
     https://github.com/RokoVarano/hotel_services_backend
 
