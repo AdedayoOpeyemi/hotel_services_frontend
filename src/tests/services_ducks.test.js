@@ -15,11 +15,6 @@ const initialState = {
 
 let store = testStore(initialState);
 
-// const errors = (messages) => ({
-//   type: API_FAILURE,
-//   messages,
-// });
-
 const serviceA = {
   id: 1,
   name: 'pool time',

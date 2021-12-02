@@ -1,6 +1,5 @@
 import React, { useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-// import PropTypes from 'prop-types';
 import { useNavigate } from 'react-router-dom';
 import backgroundImage from './assets/new-reservation-background.jpg';
 import {
@@ -196,13 +195,5 @@ function Reserve() {
     </header>
   );
 }
-
-// Reserve.propTypes = {
-//   serviceId: PropTypes.number,
-// };
-
-// Reserve.defaultProps = {
-//   serviceId: -1,
-// };
 
 export default Reserve;
