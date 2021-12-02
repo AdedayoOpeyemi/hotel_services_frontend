@@ -11,7 +11,7 @@
 ![Services](./src/components/assets/services.png)
 ![Service](./src/components/assets/service.png)
 ![Reserve](./src/components/assets/reserve.png)
-![Reservations](./src/components/assets/Reservations.png)
+![Reservations](./src/components/assets/reservations.png)
 ![newService](./src/components/assets/newService.png)
 ![Delete](./src/components/assets/delete.png)
 
@@ -46,7 +46,7 @@ https://github.com/RokoVarano/hotel_services_backend
 
 ### Testing
 
-1. Run 
+1. Run
    ```sh
    yarn test
    ```
