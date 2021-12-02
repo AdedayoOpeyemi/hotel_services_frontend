@@ -1,70 +1,120 @@
-# Getting Started with Create React App
+![](https://img.shields.io/badge/Microverse-blueviolet)
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+# Hotel Booking app Front-end
 
-## Available Scripts
+ - [Live Demo](https://hotel-services-2021.netlify.app)
 
-In the project directory, you can run:
+### Back-end API access on:
+    https://github.com/RokoVarano/hotel_services_backend
 
-### `yarn start`
+> React Frontend of the project
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+![Login](./src/components/assets/login.png)
+![Services](./src/components/assets/services.png)
+![Service](./src/components/assets/service.png)
+![Reserve](./src/components/assets/reserve.png)
+![Reservations](./src/components/assets/reservations.png)
+![newService](./src/components/assets/newService.png)
+![Delete](./src/components/assets/delete.png)
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+Additional description about the project and its features.
 
-### `yarn test`
+## Built With
+- Javascript
+- React
+- Redux
+- Bootstrap
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+## Installation
 
-### `yarn build`
+**Follow the Back-end instructions available on:**
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+```
+https://github.com/RokoVarano/hotel_services_backend
+```
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+1. Clone the repo
+   ```sh
+   git clone git@github.com:AdedayoOpeyemi/hotel_services_frontend.git
+   ```
+2. Install NPM packages
+   ```sh
+   npm install
+   ```
+   2. Start the server
+   ```sh
+   npm start
+   ```
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+### Testing
 
-### `yarn eject`
+1. Run
+   ```sh
+   yarn test
+   ```
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+### Prerequisites
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+* No prerequisites needed for this project.
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+### Usage
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+* Login or Sign up only with username.
+* On the services page select the service that you want.
+* The selection will give more details on the service page about the selected one.
+* To add a service fill and submit the form.
+* To delete a service, click on the delete button.
+* On My Reservations page you will be able to see a list of all your reservations, and also be able to cancel any of them.
+* On the Reserve page you will be able to generate a new reservations for any service by filling up the date and the city of your choice.
 
-## Learn More
+### Kanban board
+- [Kanban board](https://github.com/RokoVarano/hotel_services_backend/projects/1)
+- [Kanban board Screenshoot](https://user-images.githubusercontent.com/57110317/142681121-8060c7cb-3270-4c90-9610-4c150bdc3c84.png)
+- In this project we worked in a group of 4 members:
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+## Authors
 
-### Code Splitting
+👤 **Andres Castañeda**
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+- GitHub: [@githubhandle](https://github.com/afcastaneda223)
+- Twitter: [@twitterhandle](https://twitter.com/twitterhandle)
+- LinkedIn: [LinkedIn](https://linkedin.com/in/linkedinhandle)
 
-### Analyzing the Bundle Size
+👤 **Rodrigo Ibaceta Jimenez**
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+- GitHub: [@githubhandle](https://github.com/RokoVarano)
+- Twitter: [@twitterhandle](https://twitter.com/twitterhandle)
+- LinkedIn: [LinkedIn](https://linkedin.com/in/linkedinhandle)
 
-### Making a Progressive Web App
+👤 **Lucas FS**
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+- GitHub: [@githubhandle](https://github.com/notlfish)
+- Twitter: [@twitterhandle](https://twitter.com/twitterhandle)
+- LinkedIn: [LinkedIn](https://linkedin.com/in/linkedinhandle)
 
-### Advanced Configuration
+👤 **Opeyemi Oyelesi**
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+- GitHub: [@githubhandle](https://github.com/AdedayoOpeyemi)
+- Twitter: [@twitterhandle](https://twitter.com/twitterhandle)
+- LinkedIn: [LinkedIn](https://linkedin.com/in/linkedinhandle)
+## 🤝 Contributing
 
-### Deployment
+Contributions, issues, and feature requests are welcome!
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
+Feel free to check the [issues page](../../issues/).
 
-### `yarn build` fails to minify
+## Show your support
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+Give a ⭐️ if you like this project!
+
+## Acknowledgments
+
+- Special thanks to [Murat Korkmaz](https://www.behance.net/muratk) for allowing us to use his [Vespa Design](https://www.behance.net/gallery/26425031/Vespa-Responsive-Redesign)
+- New Reservation Photo by <a href="https://unsplash.com/@danedeaner?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Dane Deaner</a> on <a href="https://unsplash.com/s/photos/conference-room?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Unsplash</a>
+- New Service Photo by <a href="https://unsplash.com/@quinguyen?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Q.U.I</a> on <a href="https://unsplash.com/s/photos/hotel?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Unsplash</a>
+
+
+## 📝 License
+
+This project is [MIT](./MIT.md) licensed.
