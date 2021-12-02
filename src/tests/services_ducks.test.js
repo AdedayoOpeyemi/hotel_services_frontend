@@ -5,8 +5,7 @@ import { testStore } from '../redux/configurateStore';
 
 const mock = new MockAdapter(axios);
 
-const port = '3000';
-const rootUrl = `http://localhost:${port}`;
+const rootUrl = 'https://hotel-services-2021.herokuapp.com/';
 
 const initialState = {
   user: {
