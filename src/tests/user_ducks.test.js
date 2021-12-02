@@ -17,8 +17,13 @@ const defaultState = {
       username: '',
       userId: -1,
       messages: [],
-    },
+    }
   },
+  services: {
+    services: [],
+    errors: null,
+  },
+  reservations: [],
 };
 
 let store = testStore(defaultState);
@@ -29,7 +34,7 @@ beforeEach(() => {
 });
 
 test('DEFAULT: should return the default state', () => {
-  expect(user(undefined, { type: 'NON_EXISTANT' })).toEqual(defaultState.user);
+  expect(user(undefined, { type: 'NON_EXISTENT' })).toEqual(defaultState.user);
 });
 
 test('GET: should set a user with name, userId, and the login message', async () => {
