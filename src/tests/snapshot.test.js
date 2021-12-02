@@ -1,5 +1,3 @@
-
-
 import React from 'react';
 import TestRenderer from 'react-test-renderer';
 import { Provider } from 'react-redux';
@@ -14,9 +12,7 @@ import MainPage from '../components/MainPage';
 import NewService from '../components/NewService';
 import Reservations from '../components/Reservations';
 import Reserve from '../components/Reserve';
-import Service from '../components/Service';
 import Services from '../components/Services';
-import Sidebar from '../components/Sidebar';
 import Signup from '../components/Signup';
 import Delete from '../components/Delete';
 import './LocalStorageMock';
@@ -66,16 +62,31 @@ describe('Render LoginForm page', () => {
   });
 });
 
-// describe('Render MainPage page', () => {
-//   it('Renders the MainPage page', () => {
-//     const mainpage = TestRenderer.create(
-//       <Provider store={store}>
-//         <MainPage />
-//       </Provider>,
-//     ).toJSON();
-//     expect(mainpage).toMatchSnapshot();
-//   });
-// });
+describe('Render MainPage content page', () => {
+  it('Renders the MainPage page', () => {
+    const mainpage = TestRenderer.create(
+      <Provider store={store}>
+        <Router>
+          <MainPage type="content"><div /></MainPage>
+        </Router>
+      </Provider>,
+    ).toJSON();
+    expect(mainpage).toMatchSnapshot();
+  });
+});
+
+describe('Render MainPage form page', () => {
+  it('Renders the MainPage page', () => {
+    const mainpage = TestRenderer.create(
+      <Provider store={store}>
+        <Router>
+          <MainPage type="form"><div /></MainPage>
+        </Router>
+      </Provider>,
+    ).toJSON();
+    expect(mainpage).toMatchSnapshot();
+  });
+});
 
 describe('Render NewService page', () => {
   it('Renders the NewService page', () => {
@@ -119,21 +130,6 @@ describe('Render Reserve page', () => {
       </Provider>,
     ).toJSON();
     expect(reserve).toMatchSnapshot();
-  });
-});
-
-describe('Render Service page', () => {
-  it('Renders the Service page', () => {
-    const history = createMemoryHistory();
-    history.push('/services/1');
-    const service = TestRenderer.create(
-      <Provider store={store}>
-        <Router history={history}>
-          <Service />
-        </Router>
-      </Provider>,
-    ).toJSON();
-    expect(service).toMatchSnapshot();
   });
 });
 
