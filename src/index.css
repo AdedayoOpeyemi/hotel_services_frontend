@@ -198,6 +198,7 @@ button.rec.rec-arrow:focus {
 
 .rotate {
   transform: rotate(-10deg);
+
   /* Legacy vendor prefixes that you probably don't need... */
 
   /* Safari */
