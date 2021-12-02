@@ -11,7 +11,7 @@ function Sidebar({ show }) {
     <div className={`sidebarcont sidebarbg h-100 ${show ? '' : 'd-none'}`}>
       <nav className="nav-menu vh-100 pt-5 ">
         <div className="row h-100 ps-3 ">
-          <h1 className="fw-light fst-italic">Services</h1>
+          <h1 className="sidebarfont rotate text-center">Services</h1>
           <div className="list-group border-0 ">
             <NavLink to="/services" className="nav-link text-dark">
               Services
